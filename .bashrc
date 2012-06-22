@@ -105,4 +105,4 @@ fi
 EDITOR=vim
 GIT_EDITOR=$EDITOR
 source /opt/ros/fuerte/setup.bash
-export ROS_PACKAGE_PATH="/home/ed/ros/dev_stacks:$ROS_PACKAGE_PATH"
+export ROS_PACKAGE_PATH="~/ros/dev_stacks:$ROS_PACKAGE_PATH"
