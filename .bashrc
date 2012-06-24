@@ -109,12 +109,13 @@ export ROS_PACKAGE_PATH="~/ros/dev_stacks:$ROS_PACKAGE_PATH"
 
 #Fancy prompt for git repos
 function parse_git_branch {
-  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-    echo "("${ref#refs/heads/}")"
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo " ("${ref#refs/heads/}")"
     }
 
     RED="\[\033[0;31m\]"
     YELLOW="\[\033[0;33m\]"
     GREEN="\[\033[0;32m\]"
+    DEFCOLOR="\[\033[0M"
 
-    PS1="$RED$PS1$YELLOW \$(parse_git_branch)\$ "
+    PS1="$PS1$YELLOW$(parse_git_branch)$DEFCOLOR \$ "
