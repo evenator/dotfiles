@@ -112,14 +112,10 @@ GIT_EDITOR=$EDITOR
 
 
 #Fancy prompt for git repos
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo " ("${ref#refs/heads/}")"
-    }
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+DEFCOLOR="\[\033[0m"
 
-    RED="\[\033[0;31m\]"
-    YELLOW="\[\033[0;33m\]"
-    GREEN="\[\033[0;32m\]"
-    DEFCOLOR="\[\033[0m"
-
-    PS1="$PS1$YELLOW$(parse_git_branch)$DEFCOLOR \$ "
+export GIT_PS1_SHOWDIRTYSTATE=1
+PS1="$PS1$YELLOW$(__git_ps1)$DEFCOLOR \$ "
