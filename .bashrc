@@ -107,8 +107,8 @@ GIT_EDITOR=$EDITOR
 
 #ROS Stuff
 
-#source /opt/ros/fuerte/setup.bash
-#export ROS_PACKAGE_PATH="~/ros/dev_stacks:$ROS_PACKAGE_PATH"
+source /opt/ros/fuerte/setup.bash
+export ROS_PACKAGE_PATH="~/ros/dev_stacks:$ROS_PACKAGE_PATH"
 
 
 #Fancy prompt for git repos
