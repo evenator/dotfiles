@@ -2,7 +2,7 @@
 # /home/ed/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Mon Jun  4 16:06:49 2012
+# Generated on Thu Sep 20 19:27:02 2012
 #
 
 # ConfigProperties:
@@ -13,8 +13,8 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
@@ -45,7 +45,9 @@ Timer = Thermal_Monitor_(GPU_0),Yes,1000
 0/GreenGamma=1.000000
 0/BlueGamma=1.000000
 0/DigitalVibrance[DFP-0]=0
+0/ImageSharpening[DFP-0]=127
 0/GPUScaling[DFP-0]=131073
+0/OverscanCompensation[DFP-0]=0
 0/ColorSpace[DFP-0]=0
 0/ColorRange[DFP-0]=0
 0/XVideoTextureBrightness=0
@@ -53,4 +55,4 @@ Timer = Thermal_Monitor_(GPU_0),Yes,1000
 0/XVideoTextureHue=0
 0/XVideoTextureSaturation=0
 0/XVideoTextureSyncToVBlank=1
-0/XVideoSyncToDisplay=65536
+0/XVideoSyncToDisplay=1

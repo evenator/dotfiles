@@ -108,7 +108,7 @@ GIT_EDITOR=$EDITOR
 #ROS Stuff
 
 source /opt/ros/fuerte/setup.bash
-export ROS_PACKAGE_PATH="~/ros/dev_stacks:$ROS_PACKAGE_PATH"
+export ROS_PACKAGE_PATH="/home/ed/ros/dev_stacks:$ROS_PACKAGE_PATH"
 
 
 #Fancy prompt for git repos
@@ -118,4 +118,4 @@ GREEN="\[\033[0;32m\]"
 DEFCOLOR="\[\033[0m"
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-PS1="$PS1$YELLOW$(__git_ps1)$DEFCOLOR \$ "
+export PS1="$PS1$YELLOW\$(__git_ps1)$DEFCOLOR \$ "
