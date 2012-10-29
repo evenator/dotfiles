@@ -3,3 +3,8 @@
 [user]
 	name = Ed Venator
 	email = esv@case.edu
+[alias]
+        prettylog = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n%b' --abbrev-commit --
+        graphlog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[color]
+        ui = true

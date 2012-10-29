@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectPreferences>
+<DefaultUser></DefaultUser>
+<DefaultSecondUser></DefaultSecondUser>
+<ClientCertificateThumbprint></ClientCertificateThumbprint>
+<ServerCertificateThumbprint></ServerCertificateThumbprint>
+<DefaultHost>vpn3000.case.edu</DefaultHost>
+<DefaultGroup></DefaultGroup>
+<ProxyHost></ProxyHost>
+<ProxyPort></ProxyPort>
+<SDITokenType></SDITokenType>
+<ControllablePreferences>
+<AutoConnectOnStart>false</AutoConnectOnStart>
+<LocalLanAccess>false</LocalLanAccess></ControllablePreferences>
+</AnyConnectPreferences>
