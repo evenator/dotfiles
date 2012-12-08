@@ -108,7 +108,6 @@ GIT_EDITOR=$EDITOR
 #ROS Stuff
 
 source /opt/ros/fuerte/setup.bash
-source /home/ed/ros/dev_stacks/moveit/setup.bash
 export ROS_PACKAGE_PATH="$HOME/ros/dev_stacks:$ROS_PACKAGE_PATH"
 
 #Fancy prompt for git repos
