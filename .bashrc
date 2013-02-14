@@ -109,7 +109,7 @@ GIT_EDITOR=$EDITOR
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
-DEFCOLOR="\[\033[0m"
+DEFCOLOR="\[\033[0m\]"
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="$PS1$YELLOW\$(__git_ps1)$DEFCOLOR \$ "
