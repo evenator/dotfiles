@@ -1,0 +1,767 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='/usr/share/eclipse/dropins/rse' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
+  <properties size='1'>
+    <property name='p2.timestamp' value='1371150443426'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='71'>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.sdk' version='3.1.2.201304111716-7U78AH7lf_ya4ZI9kfLoyqFkz-eh'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.sdk_3.1.2.201304111716-7U78AH7lf_ya4ZI9kfLoyqFkz-eh/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.sdk_3.1.2.201304111716-7U78AH7lf_ya4ZI9kfLoyqFkz-eh'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.services.ssh' version='3.0.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='37026'/>
+        <property name='download.size' value='37026'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.ssh_3.0.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.ssh_3.0.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.shells.ssh' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='10007'/>
+        <property name='download.size' value='10007'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.ssh_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.ssh_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.shells.dstore' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='11789'/>
+        <property name='download.size' value='11789'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.dstore_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.dstore_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.efs' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='24775'/>
+        <property name='download.size' value='24775'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.efs_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.efs_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.ftp.source' version='3.0.101.201304111716-782A8773593B555H5F'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.ftp.source_3.0.101.201304111716-782A8773593B555H5F/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.ftp.source_3.0.101.201304111716-782A8773593B555H5F'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.files.dstore' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='28504'/>
+        <property name='download.size' value='28504'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.dstore_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.dstore_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.terminals' version='1.0.2.201304111716-77-47H6BJ8LEBFUCR938'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.terminals_1.0.2.201304111716-77-47H6BJ8LEBFUCR938/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.terminals_1.0.2.201304111716-77-47H6BJ8LEBFUCR938'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.shells.ui' version='3.0.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='124833'/>
+        <property name='download.size' value='124833'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.shells.ui_3.0.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.shells.ui_3.0.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.core.source' version='3.1.1.201304111716-7a7CEw7sRf4SIeefxfj'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.core.source_3.1.1.201304111716-7a7CEw7sRf4SIeefxfj/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.core.source_3.1.1.201304111716-7a7CEw7sRf4SIeefxfj'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.services.local' version='2.1.101.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='50518'/>
+        <property name='download.size' value='50518'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.local_2.1.101.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.local_2.1.101.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.terminals.core' version='1.0.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='15376'/>
+        <property name='download.size' value='15376'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.terminals.core_1.0.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.terminals.core_1.0.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.shells.core' version='3.1.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='57989'/>
+        <property name='download.size' value='57989'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.core_3.1.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.core_3.1.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.files.ftp' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='24981'/>
+        <property name='download.size' value='24981'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.ftp_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.ftp_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.services.files.ftp' version='3.0.101.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='33983'/>
+        <property name='download.size' value='33983'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.files.ftp_3.0.101.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.files.ftp_3.0.101.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.local.source' version='2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.local.source_2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.local.source_2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.doc.user' version='3.1.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='202091'/>
+        <property name='download.size' value='202091'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.doc.user_3.1.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.doc.user_3.1.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.services.dstore' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='318029'/>
+        <property name='download.size' value='318029'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.dstore_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.dstore_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.services' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='417058'/>
+        <property name='download.size' value='417058'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.dstore.extra' version='2.1.101.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='16567'/>
+        <property name='download.size' value='16567'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.dstore.extra_2.1.101.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.dstore.extra_2.1.101.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.ssh.source' version='3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.ssh.source_3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.ssh.source_3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.dstore.core' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='344482'/>
+        <property name='download.size' value='344482'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.dstore.core_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.dstore.core_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.terminals.source' version='1.0.2.201304111716-77-47H6BJ8LEBFUCR938'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.terminals.source_1.0.2.201304111716-77-47H6BJ8LEBFUCR938/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.terminals.source_1.0.2.201304111716-77-47H6BJ8LEBFUCR938'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.sdk' version='3.1.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='5664'/>
+        <property name='download.size' value='5664'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.sdk_3.1.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.sdk_3.1.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.processes.shell.linux' version='1.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='23537'/>
+        <property name='download.size' value='23537'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.shell.linux_1.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.shell.linux_1.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.connectorservice.local' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='7133'/>
+        <property name='download.size' value='7133'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.local_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.local_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.tm.terminal' version='3.0.2.201304111716-4-1312415222827'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.tm.terminal_3.0.2.201304111716-4-1312415222827/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.tm.terminal_3.0.2.201304111716-4-1312415222827'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.ftp' version='3.0.101.201304111716-782A8773593B555H5F'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ftp_3.0.101.201304111716-782A8773593B555H5F/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ftp_3.0.101.201304111716-782A8773593B555H5F'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.tm.terminal' version='3.0.2.201304111715'>
+      <properties size='2'>
+        <property name='artifact.size' value='154670'/>
+        <property name='download.size' value='154670'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.tm.terminal_3.0.2.201304111715.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.tm.terminal_3.0.2.201304111715.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.shells.telnet' version='1.2.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='9995'/>
+        <property name='download.size' value='9995'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.telnet_1.2.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.telnet_1.2.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.ui' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='1603509'/>
+        <property name='download.size' value='1603509'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.ui_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.ui_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.ssh' version='3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ssh_3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ssh_3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.processes.dstore' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='9976'/>
+        <property name='download.size' value='9976'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.dstore_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.dstore_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.processes.local' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='9426'/>
+        <property name='download.size' value='9426'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.local_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.local_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.telnet.source' version='2.2.1.201304111716-77507B58E5H888Q8N'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.telnet.source_2.2.1.201304111716-77507B58E5H888Q8N/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.telnet.source_2.2.1.201304111716-77507B58E5H888Q8N'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.services.telnet' version='2.0.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='15340'/>
+        <property name='download.size' value='15340'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.telnet_2.0.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.services.telnet_2.0.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.local' version='2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.local_2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.local_2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.core' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='381257'/>
+        <property name='download.size' value='381257'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.core_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.core_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.shells.local' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='10116'/>
+        <property name='download.size' value='10116'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.local_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.shells.local_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.ssh.source' version='3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ssh.source_3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ssh.source_3.0.1.201304111716-7A2Bh7F7BJ7NBBBZBV'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.dstore.source' version='3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.dstore.source_3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.dstore.source_3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.doc.isv' version='3.1.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='7300270'/>
+        <property name='download.size' value='7300270'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.doc.isv_3.1.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.doc.isv_3.1.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.core' version='3.1.1.201304111716-7a7CEw7sRf4SIeefxfj'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.core_3.1.1.201304111716-7a7CEw7sRf4SIeefxfj/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.core_3.1.1.201304111716-7a7CEw7sRf4SIeefxfj'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.core.source' version='3.1.1.201304111716-7a7CEw7sRf4SIeefxfj'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.core.source_3.1.1.201304111716-7a7CEw7sRf4SIeefxfj/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.core.source_3.1.1.201304111716-7a7CEw7sRf4SIeefxfj'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.processes.core' version='3.1.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='21006'/>
+        <property name='download.size' value='21006'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.core_3.1.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.processes.core_3.1.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse' version='3.1.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='5668'/>
+        <property name='download.size' value='5668'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse_3.1.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse_3.1.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.importexport' version='1.2.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='219502'/>
+        <property name='download.size' value='219502'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.importexport_1.2.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.importexport_1.2.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.files.ui' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='463148'/>
+        <property name='download.size' value='463148'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.files.ui_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.files.ui_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.terminals.ui' version='1.0.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='51729'/>
+        <property name='download.size' value='51729'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.terminals.ui_1.0.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.terminals.ui_1.0.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.connectorservice.dstore' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='59037'/>
+        <property name='download.size' value='59037'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.dstore_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.dstore_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.files.core' version='3.1.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='120426'/>
+        <property name='download.size' value='120426'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.core_3.1.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.core_3.1.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.connectorservice.ssh' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='31426'/>
+        <property name='download.size' value='31426'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.ssh_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.ssh_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.tm.terminal' version='3.0.2.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='154670'/>
+        <property name='download.size' value='154670'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.tm.terminal_3.0.2.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.tm.terminal_3.0.2.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.telnet' version='2.2.1.201304111716-77507B58E5H888Q8N'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.telnet_2.2.1.201304111716-77507B58E5H888Q8N/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.telnet_2.2.1.201304111716-77507B58E5H888Q8N'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.dstore' version='3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.dstore_3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.dstore_3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.terminals.source' version='1.0.2.201304111716-77-47H6BJ8LEBFUCR938'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.terminals.source_1.0.2.201304111716-77-47H6BJ8LEBFUCR938/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.terminals.source_1.0.2.201304111716-77-47H6BJ8LEBFUCR938'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.files.ssh' version='2.1.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='9687'/>
+        <property name='download.size' value='9687'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.ssh_2.1.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.ssh_2.1.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.local.source' version='2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.local.source_2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.local.source_2.1.101.201304111716-7B4Eq7J9EO9TEEEhEc'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse' version='3.1.2.201304111716-7L5AF83ofLA5fy1cTpd2_mmEr9'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse_3.1.2.201304111716-7L5AF83ofLA5fy1cTpd2_mmEr9/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse_3.1.2.201304111716-7L5AF83ofLA5fy1cTpd2_mmEr9'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.dstore.security' version='3.0.100.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='57548'/>
+        <property name='download.size' value='57548'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.dstore.security_3.0.100.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.dstore.security_3.0.100.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.apache.commons.net' version='2.2.0'>
+      <properties size='2'>
+        <property name='artifact.size' value='206848'/>
+        <property name='download.size' value='206848'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.apache.commons.net_2.2.0.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.apache.commons.net_2.2.0.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.ftp.source' version='3.0.101.201304111716-782A8773593B555H5F'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ftp.source_3.0.101.201304111716-782A8773593B555H5F/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.ftp.source_3.0.101.201304111716-782A8773593B555H5F'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.connectorservice.telnet' version='1.2.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='17820'/>
+        <property name='download.size' value='17820'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.telnet_1.2.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.connectorservice.telnet_1.2.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.dstore.source' version='3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.dstore.source_3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.dstore.source_3.1.1.201304111716-7L6Es7VFNcFkNNO6Nz0'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.dstore.doc.isv' version='3.1.0.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='631110'/>
+        <property name='download.size' value='631110'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.dstore.doc.isv_3.1.0.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.dstore.doc.isv_3.1.0.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.files.local' version='2.1.101.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='17532'/>
+        <property name='download.size' value='17532'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.local_2.1.101.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.files.local_2.1.101.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.efs.ui' version='2.1.101.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='13714'/>
+        <property name='download.size' value='13714'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.efs.ui_2.1.101.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.efs.ui_2.1.101.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.processes.ui' version='3.0.101.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='64496'/>
+        <property name='download.size' value='64496'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.processes.ui_3.0.101.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.processes.ui_3.0.101.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.tm.terminal' version='3.0.2.201304111715-4-1312415222826'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.tm.terminal_3.0.2.201304111715-4-1312415222826/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.tm.terminal_3.0.2.201304111715-4-1312415222826'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rse.subsystems.terminals.ssh' version='1.0.1.201304111716'>
+      <properties size='2'>
+        <property name='artifact.size' value='5633'/>
+        <property name='download.size' value='5633'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.terminals.ssh_1.0.1.201304111716.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/plugins/org.eclipse.rse.subsystems.terminals.ssh_1.0.1.201304111716.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rse.telnet.source' version='2.2.1.201304111716-77507B58E5H888Q8N'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.telnet.source_2.2.1.201304111716-77507B58E5H888Q8N/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/rse/eclipse/features/org.eclipse.rse.telnet.source_2.2.1.201304111716-77507B58E5H888Q8N'/>
+      </repositoryProperties>
+    </artifact>
+  </artifacts>
+</repository>
