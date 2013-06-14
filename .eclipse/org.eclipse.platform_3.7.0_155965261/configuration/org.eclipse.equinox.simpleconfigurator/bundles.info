@@ -28,6 +28,7 @@ org.apache.lucene.core,2.9.4,plugins/org.apache.lucene.core_2.9.4.jar,4,false
 org.apache.xerces,2.9.0.v201101211617,../../../home/evenator/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/org.apache.xerces_2.9.0.v201101211617.jar,4,false
 org.apache.xml.resolver,1.2.0.v201005080400,../../../home/evenator/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar,4,false
 org.apache.xml.serializer,2.7.1.v201005080400,../../../home/evenator/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar,4,false
+org.dadacoalition.yedit,0.0.11,../../../home/evenator/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/org.dadacoalition.yedit_0.0.11.jar,4,false
 org.eclipse.ant.core,3.2.302.dist,plugins/org.eclipse.ant.core_3.2.302.dist.jar,4,false
 org.eclipse.ant.launching,1.0.101.dist,dropins/jdt/plugins/org.eclipse.ant.launching_1.0.101.dist.jar,4,false
 org.eclipse.ant.ui,3.5.101.dist,dropins/jdt/plugins/org.eclipse.ant.ui_3.5.101.dist.jar,4,false
