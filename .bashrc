@@ -5,6 +5,15 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+#Fancy prompt for git repos
+BLUE="\[\033[1;34m\]"
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+DEFCOLOR="\[\033[0m\]"
+
+force_color_prompt=yes
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
@@ -105,18 +114,14 @@ fi
 EDITOR=vim
 GIT_EDITOR=$EDITOR
 
-#Fancy prompt for git repos
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
-GREEN="\[\033[0;32m\]"
-DEFCOLOR="\[\033[0m\]"
-
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="$PS1$YELLOW\$(__git_ps1)$DEFCOLOR \$ "
 
 #ROS
-source /opt/ros/fuerte/setup.bash
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros/SUMET/fuerte:~/SUMET
+#source /opt/ros/fuerte/setup.bash
+#export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros/SUMET/fuerte:~/SUMET
 
 #ROS Workspace
-source ~/DSAT/setup.bash
+#source ~/DSAT/setup.bash
+export ROSLAUNCH_SSH_UNKNOWN=1
+export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)

@@ -7,3 +7,6 @@ file:///home/ed/ros/dev_stacks/swri-ros-pkg
 file:///home/ed/ros/dev_stacks/cwru-ros-pkg
 file:///home/ed/masters
 file:///home/ed/masters/RobotStudio/RAPID
+sftp://ranger@crystal-1165/home/ranger ranger@crystal-1165
+sftp://sumet@crystal-1165/home/sumet sumet@crystal-1165
+sftp://ranger@129.162.199.49/home/ranger localization box
