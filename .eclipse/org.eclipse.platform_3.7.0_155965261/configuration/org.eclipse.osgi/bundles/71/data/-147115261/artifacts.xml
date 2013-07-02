@@ -2,7 +2,7 @@
 <?artifactRepository version='1.1.0'?>
 <repository name='/usr/lib/eclipse/dropins/sdk' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
   <properties size='1'>
-    <property name='p2.timestamp' value='1371238052063'/>
+    <property name='p2.timestamp' value='1371662631846'/>
   </properties>
   <mappings size='3'>
     <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
@@ -20,16 +20,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.jface.source_3.7.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.pde.source' version='3.7.2.dist-7b7rFUPF9fnFH'>
-      <properties size='3'>
-        <property name='artifact.size' value='4096'/>
-        <property name='download.size' value='4096'/>
-        <property name='download.contentType' value='application/zip'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ecf.identity.source' version='3.1.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='39142'/>
+        <property name='download.size' value='39142'/>
       </properties>
-      <repositoryProperties size='3'>
-        <property name='artifact.folder' value='true'/>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/features/org.eclipse.pde.source_3.7.2.dist-7b7rFUPF9fnFH/'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.pde.source_3.7.2.dist-7b7rFUPF9fnFH'/>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.identity.source_3.1.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.identity.source_3.1.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.api.tools' version='1.0.301.dist'>
@@ -42,14 +40,16 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.api.tools_1.0.301.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.ecf.identity.source' version='3.1.100.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='39142'/>
-        <property name='download.size' value='39142'/>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.pde.source' version='3.7.2.dist-7b7rFUPF9fnFH'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
       </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.identity.source_3.1.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.identity.source_3.1.100.dist.jar'/>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/features/org.eclipse.pde.source_3.7.2.dist-7b7rFUPF9fnFH/'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.pde.source_3.7.2.dist-7b7rFUPF9fnFH'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='org.eclipse.update.feature' id='org.eclipse.platform.source' version='3.7.2.dist-9nF7UHagFqn9pElwWhC90gLz-soEuSGYmtSeiRH'>
@@ -64,14 +64,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.platform.source_3.7.2.dist-9nF7UHagFqn9pElwWhC90gLz-soEuSGYmtSeiRH'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.operations.source' version='2.1.1.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.jsp.jasper.registry.source' version='1.0.200.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='42096'/>
-        <property name='download.size' value='42096'/>
+        <property name='artifact.size' value='5385'/>
+        <property name='download.size' value='5385'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.operations.source_2.1.1.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.operations.source_2.1.1.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.jsp.jasper.registry.source_1.0.200.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.jsp.jasper.registry.source_1.0.200.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.updatechecker.source' version='1.1.200.dist'>
@@ -84,24 +84,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.updatechecker.source_1.1.200.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.jsp.jasper.registry.source' version='1.0.200.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.operations.source' version='2.1.1.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='5385'/>
-        <property name='download.size' value='5385'/>
+        <property name='artifact.size' value='42096'/>
+        <property name='download.size' value='42096'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.jsp.jasper.registry.source_1.0.200.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.jsp.jasper.registry.source_1.0.200.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.source' version='1.3.100.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='88639'/>
-        <property name='download.size' value='88639'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filesystem.source_1.3.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filesystem.source_1.3.100.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.operations.source_2.1.1.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.operations.source_2.1.1.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.reconciler.dropins.source' version='1.1.100.dist'>
@@ -112,6 +102,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.reconciler.dropins.source_1.1.100.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.reconciler.dropins.source_1.1.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.source' version='1.3.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='88639'/>
+        <property name='download.size' value='88639'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filesystem.source_1.3.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filesystem.source_1.3.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.metadata.repository.source' version='1.2.0.dist'>
@@ -254,14 +254,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ui.source_3.6.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.net.source' version='1.2.100.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.director.app.source' version='1.0.300.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='53037'/>
-        <property name='download.size' value='53037'/>
+        <property name='artifact.size' value='22062'/>
+        <property name='download.size' value='22062'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.net.source_1.2.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.net.source_1.2.100.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.director.app.source_1.0.300.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.director.app.source_1.0.300.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.osgi.source' version='3.7.2.dist'>
@@ -274,14 +274,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.osgi.source_3.7.2.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.director.app.source' version='1.0.300.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.net.source' version='1.2.100.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='22062'/>
-        <property name='download.size' value='22062'/>
+        <property name='artifact.size' value='53037'/>
+        <property name='download.size' value='53037'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.director.app.source_1.0.300.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.director.app.source_1.0.300.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.net.source_1.2.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.net.source_1.2.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.ua.core' version='1.0.100.dist'>
@@ -292,6 +292,26 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.core_1.0.100.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.core_1.0.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.help.webapp.source' version='3.6.1.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='176305'/>
+        <property name='download.size' value='176305'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.help.webapp.source_3.6.1.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.help.webapp.source_3.6.1.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.preferences.source' version='3.4.2.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='94749'/>
+        <property name='download.size' value='94749'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.preferences.source_3.4.2.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.preferences.source_3.4.2.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='org.eclipse.update.feature' id='org.eclipse.cvs.source' version='1.3.100.dist-7B78FHl9exZ_'>
@@ -306,24 +326,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.cvs.source_1.3.100.dist-7B78FHl9exZ_'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.preferences.source' version='3.4.2.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.net.source' version='1.2.100.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='94749'/>
-        <property name='download.size' value='94749'/>
+        <property name='artifact.size' value='21966'/>
+        <property name='download.size' value='21966'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.preferences.source_3.4.2.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.preferences.source_3.4.2.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.help.webapp.source' version='3.6.1.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='176305'/>
-        <property name='download.size' value='176305'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.help.webapp.source_3.6.1.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.help.webapp.source_3.6.1.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.net.source_1.2.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.net.source_1.2.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.core.source' version='3.7.1.dist'>
@@ -334,16 +344,6 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.core.source_3.7.1.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.core.source_3.7.1.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.ui.net.source' version='1.2.100.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='21966'/>
-        <property name='download.size' value='21966'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.net.source_1.2.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.net.source_1.2.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ui.forms.source' version='3.5.101.dist'>
@@ -378,16 +378,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.jdt.source_3.7.2.dist-7z8gFcuFFZOlyA8Br73543A7B15B'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.pde.api.tools.ui' version='1.0.301.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='407648'/>
-        <property name='download.size' value='407648'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.api.tools.ui_1.0.301.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.api.tools.ui_1.0.301.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.ql.source' version='2.0.100.dist'>
       <properties size='2'>
         <property name='artifact.size' value='3994'/>
@@ -398,14 +388,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.ql.source_2.0.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.touchpoint.eclipse.source' version='2.1.1.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.pde.api.tools.ui' version='1.0.301.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='80459'/>
-        <property name='download.size' value='80459'/>
+        <property name='artifact.size' value='407648'/>
+        <property name='download.size' value='407648'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.touchpoint.eclipse.source_2.1.1.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.touchpoint.eclipse.source_2.1.1.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.api.tools.ui_1.0.301.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.api.tools.ui_1.0.301.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.ua.ui' version='1.0.100.dist'>
@@ -416,6 +406,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.ui_1.0.100.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.ui_1.0.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.touchpoint.eclipse.source' version='2.1.1.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='80459'/>
+        <property name='download.size' value='80459'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.touchpoint.eclipse.source_2.1.1.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.touchpoint.eclipse.source_2.1.1.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.help.ui.source' version='3.5.101.dist'>
@@ -488,16 +488,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.views.properties.tabbed.source_3.5.200.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.resources.source' version='3.7.101.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='752392'/>
-        <property name='download.size' value='752392'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.resources.source_3.7.101.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.resources.source_3.7.101.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ui.ide.application.source' version='1.0.300.dist'>
       <properties size='2'>
         <property name='artifact.size' value='31542'/>
@@ -506,6 +496,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.ide.application.source_1.0.300.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.ide.application.source_1.0.300.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.resources.source' version='3.7.101.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='752392'/>
+        <property name='download.size' value='752392'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.resources.source_3.7.101.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.resources.source_3.7.101.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.repository.tools.source' version='2.0.100.dist'>
@@ -1007,16 +1007,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.help.appserver.source_3.1.400.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.text.source' version='3.5.101.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='239924'/>
-        <property name='download.size' value='239924'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.text.source_3.5.101.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.text.source_3.5.101.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.ui.templates.source' version='3.4.400.dist'>
       <properties size='2'>
         <property name='artifact.size' value='83731'/>
@@ -1027,14 +1017,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ui.templates.source_3.4.400.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.rcp.source' version='3.7.2.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.text.source' version='3.5.101.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='7971'/>
-        <property name='download.size' value='7971'/>
+        <property name='artifact.size' value='239924'/>
+        <property name='download.size' value='239924'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.rcp.source_3.7.2.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.rcp.source_3.7.2.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.text.source_3.5.101.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.text.source_3.5.101.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ui.presentations.r21.source' version='3.2.200.dist'>
@@ -1045,6 +1035,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.presentations.r21.source_3.2.200.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.presentations.r21.source_3.2.200.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.rcp.source' version='3.7.2.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='7971'/>
+        <property name='download.size' value='7971'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.rcp.source_3.7.2.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.rcp.source_3.7.2.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.core.expressions.source' version='3.4.300.dist'>
@@ -1069,16 +1069,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.equinox.p2.core.feature.source_1.0.1.dist-8291FXcFLhV8CJ871602A41'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.platform.source' version='3.7.2.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='11251'/>
-        <property name='download.size' value='11251'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.platform.source_3.7.2.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.platform.source_3.7.2.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ecf.provider.filetransfer.ssl.source' version='1.0.0.dist'>
       <properties size='2'>
         <property name='artifact.size' value='3477'/>
@@ -1087,6 +1077,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.provider.filetransfer.ssl.source_1.0.0.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.provider.filetransfer.ssl.source_1.0.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.platform.source' version='3.7.2.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='11251'/>
+        <property name='download.size' value='11251'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.platform.source_3.7.2.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.platform.source_3.7.2.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.repository.source' version='2.1.1.dist'>
@@ -1109,16 +1109,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.simpleconfigurator.source_1.0.200.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.equinox.p2.extras.feature.source' version='1.0.1.dist-7A4FD4BpDPIGYdGMiW9DK982713B'>
-      <properties size='3'>
-        <property name='artifact.size' value='4096'/>
-        <property name='download.size' value='4096'/>
-        <property name='download.contentType' value='application/zip'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.team.core.source' version='3.6.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='343793'/>
+        <property name='download.size' value='343793'/>
       </properties>
-      <repositoryProperties size='3'>
-        <property name='artifact.folder' value='true'/>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/features/org.eclipse.equinox.p2.extras.feature.source_1.0.1.dist-7A4FD4BpDPIGYdGMiW9DK982713B/'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.equinox.p2.extras.feature.source_1.0.1.dist-7A4FD4BpDPIGYdGMiW9DK982713B'/>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.core.source_3.6.0.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.core.source_3.6.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ui.workbench.compatibility.source' version='3.2.100.dist'>
@@ -1131,14 +1129,16 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.workbench.compatibility.source_3.2.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.team.core.source' version='3.6.0.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='343793'/>
-        <property name='download.size' value='343793'/>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.equinox.p2.extras.feature.source' version='1.0.1.dist-7A4FD4BpDPIGYdGMiW9DK982713B'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
       </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.core.source_3.6.0.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.core.source_3.6.0.dist.jar'/>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/features/org.eclipse.equinox.p2.extras.feature.source_1.0.1.dist-7A4FD4BpDPIGYdGMiW9DK982713B/'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.equinox.p2.extras.feature.source_1.0.1.dist-7A4FD4BpDPIGYdGMiW9DK982713B'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ui.intro.source' version='3.4.100.dist'>
@@ -1161,14 +1161,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.views.source_3.6.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.pde.ua.ui.source' version='1.0.100.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.debug.core.source' version='3.7.1.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='254038'/>
-        <property name='download.size' value='254038'/>
+        <property name='artifact.size' value='343514'/>
+        <property name='download.size' value='343514'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.ui.source_1.0.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.ui.source_1.0.100.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.debug.core.source_3.7.1.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.debug.core.source_3.7.1.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.runtime' version='3.4.201.dist'>
@@ -1181,14 +1181,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.runtime_3.4.201.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.debug.core.source' version='3.7.1.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.pde.ua.ui.source' version='1.0.100.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='343514'/>
-        <property name='download.size' value='343514'/>
+        <property name='artifact.size' value='254038'/>
+        <property name='download.size' value='254038'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.debug.core.source_3.7.1.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.debug.core.source_3.7.1.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.ui.source_1.0.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ua.ui.source_1.0.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.core.contenttype.source' version='3.4.100.dist'>
@@ -1201,6 +1201,16 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.contenttype.source_3.4.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.navigator.resources.source' version='3.4.300.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='64022'/>
+        <property name='download.size' value='64022'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.navigator.resources.source_3.4.300.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.navigator.resources.source_3.4.300.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
     <artifact classifier='org.eclipse.update.feature' id='org.eclipse.sdk' version='3.7.2.dist-7Q7xALBmjCz0eoBYBlmz-2dHQcaYo4moaxMA31hDVFowy'>
       <properties size='3'>
         <property name='artifact.size' value='4096'/>
@@ -1211,16 +1221,6 @@
         <property name='artifact.folder' value='true'/>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/features/org.eclipse.sdk_3.7.2.dist-7Q7xALBmjCz0eoBYBlmz-2dHQcaYo4moaxMA31hDVFowy/'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/features/org.eclipse.sdk_3.7.2.dist-7Q7xALBmjCz0eoBYBlmz-2dHQcaYo4moaxMA31hDVFowy'/>
-      </repositoryProperties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.ui.navigator.resources.source' version='3.4.300.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='64022'/>
-        <property name='download.size' value='64022'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.navigator.resources.source_3.4.300.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.navigator.resources.source_3.4.300.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ant.core.source' version='3.2.302.dist'>
@@ -1253,14 +1253,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ant.ui.source_3.5.101.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.ecf.provider.filetransfer.httpclient.source' version='4.0.0.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.directorywatcher.source' version='1.0.300.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='40860'/>
-        <property name='download.size' value='40860'/>
+        <property name='artifact.size' value='15827'/>
+        <property name='download.size' value='15827'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.provider.filetransfer.httpclient.source_4.0.0.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.provider.filetransfer.httpclient.source_4.0.0.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.directorywatcher.source_1.0.300.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.directorywatcher.source_1.0.300.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ui.browser.source' version='3.3.101.dist'>
@@ -1273,14 +1273,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.browser.source_3.3.101.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.directorywatcher.source' version='1.0.300.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ecf.provider.filetransfer.httpclient.source' version='4.0.0.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='15827'/>
-        <property name='download.size' value='15827'/>
+        <property name='artifact.size' value='40860'/>
+        <property name='download.size' value='40860'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.directorywatcher.source_1.0.300.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.directorywatcher.source_1.0.300.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.provider.filetransfer.httpclient.source_4.0.0.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.provider.filetransfer.httpclient.source_4.0.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.ui' version='3.6.100.dist'>
@@ -1293,16 +1293,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ui_3.6.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.ltk.core.refactoring.source' version='3.5.201.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='263083'/>
-        <property name='download.size' value='263083'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ltk.core.refactoring.source_3.5.201.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ltk.core.refactoring.source_3.5.201.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.jsch.ui.source' version='1.1.300.dist'>
       <properties size='2'>
         <property name='artifact.size' value='37803'/>
@@ -1313,24 +1303,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.jsch.ui.source_1.1.300.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.ui.ide.source' version='3.7.0.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ltk.core.refactoring.source' version='3.5.201.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='1294698'/>
-        <property name='download.size' value='1294698'/>
+        <property name='artifact.size' value='263083'/>
+        <property name='download.size' value='263083'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.ide.source_3.7.0.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.ide.source_3.7.0.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.databinding.beans.source' version='1.2.100.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='57383'/>
-        <property name='download.size' value='57383'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.beans.source_1.2.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.beans.source_1.2.100.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ltk.core.refactoring.source_3.5.201.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ltk.core.refactoring.source_3.5.201.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.core.externaltools.source' version='1.0.100.dist'>
@@ -1343,6 +1323,26 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.externaltools.source_1.0.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.databinding.beans.source' version='1.2.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='57383'/>
+        <property name='download.size' value='57383'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.beans.source_1.2.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.beans.source_1.2.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.ide.source' version='3.7.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='1294698'/>
+        <property name='download.size' value='1294698'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.ide.source_3.7.0.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.ide.source_3.7.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.event.source' version='1.2.100.dist'>
       <properties size='2'>
         <property name='artifact.size' value='20263'/>
@@ -1351,16 +1351,6 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.event.source_1.2.100.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.event.source_1.2.100.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.publisher.source' version='1.2.0.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='62977'/>
-        <property name='download.size' value='62977'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.publisher.source_1.2.0.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.publisher.source_1.2.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.updatesite.source' version='1.0.300.dist'>
@@ -1373,6 +1363,16 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.updatesite.source_1.0.300.dist.jar'/>
       </repositoryProperties>
     </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.publisher.source' version='1.2.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='62977'/>
+        <property name='download.size' value='62977'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.publisher.source_1.2.0.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.publisher.source_1.2.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ant.launching.source' version='1.0.101.dist'>
       <properties size='2'>
         <property name='artifact.size' value='112568'/>
@@ -1381,16 +1381,6 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ant.launching.source_1.0.101.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ant.launching.source_1.0.101.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.databinding.source' version='1.4.0.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='123993'/>
-        <property name='download.size' value='123993'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.source_1.4.0.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.source_1.4.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.p2.core.source' version='2.1.1.dist'>
@@ -1403,14 +1393,24 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.p2.core.source_2.1.1.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.pde.ui.templates' version='3.4.400.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.databinding.source' version='1.4.0.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='532400'/>
-        <property name='download.size' value='532400'/>
+        <property name='artifact.size' value='123993'/>
+        <property name='download.size' value='123993'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ui.templates_3.4.400.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ui.templates_3.4.400.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.source_1.4.0.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.source_1.4.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.databinding.observable.source' version='1.4.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='164869'/>
+        <property name='download.size' value='164869'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.observable.source_1.4.0.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.observable.source_1.4.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde.doc.user' version='3.7.2.dist'>
@@ -1423,14 +1423,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.doc.user_3.7.2.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.databinding.observable.source' version='1.4.0.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.pde.ui.templates' version='3.4.400.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='164869'/>
-        <property name='download.size' value='164869'/>
+        <property name='artifact.size' value='532400'/>
+        <property name='download.size' value='532400'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.observable.source_1.4.0.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.databinding.observable.source_1.4.0.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ui.templates_3.4.400.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ui.templates_3.4.400.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='org.eclipse.update.feature' id='org.eclipse.rcp.source' version='3.7.2.dist-8R9GFpOFUdy-521934'>
@@ -1485,16 +1485,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.security.source_1.1.1.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.filebuffers.source' version='3.5.200.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='78021'/>
-        <property name='download.size' value='78021'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filebuffers.source_3.5.200.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filebuffers.source_3.5.200.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.ui.intro.universal.source' version='3.2.500.dist'>
       <properties size='2'>
         <property name='artifact.size' value='48797'/>
@@ -1503,6 +1493,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.intro.universal.source_3.2.500.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.intro.universal.source_3.2.500.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filebuffers.source' version='3.5.200.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='78021'/>
+        <property name='download.size' value='78021'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filebuffers.source_3.5.200.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.filebuffers.source_3.5.200.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.cvs.source' version='1.1.100.dist'>
@@ -1556,16 +1556,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.console.source_3.5.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.core.commands.source' version='3.6.0.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='132144'/>
-        <property name='download.size' value='132144'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.commands.source_3.6.0.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.commands.source_3.6.0.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.pde' version='3.7.2.dist'>
       <properties size='2'>
         <property name='artifact.size' value='64561'/>
@@ -1574,6 +1564,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde_3.7.2.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde_3.7.2.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.commands.source' version='3.6.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='132144'/>
+        <property name='download.size' value='132144'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.commands.source_3.6.0.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.commands.source_3.6.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.util.source' version='1.0.300.dist'>
@@ -1596,16 +1596,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.frameworkadmin.equinox.source_1.0.300.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.team.ui.source' version='3.6.101.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='739058'/>
-        <property name='download.size' value='739058'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.ui.source_3.6.101.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.ui.source_3.6.101.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.platform.doc.isv' version='3.7.2.dist'>
       <properties size='2'>
         <property name='artifact.size' value='31650425'/>
@@ -1614,6 +1604,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.platform.doc.isv_3.7.2.dist.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.platform.doc.isv_3.7.2.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.team.ui.source' version='3.6.101.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='739058'/>
+        <property name='download.size' value='739058'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.ui.source_3.6.101.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.team.ui.source_3.6.101.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.source' version='1.2.0.dist'>
@@ -1626,16 +1626,6 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.launcher.source_1.2.0.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.ecf.ssl.source' version='1.0.100.dist'>
-      <properties size='2'>
-        <property name='artifact.size' value='5566'/>
-        <property name='download.size' value='5566'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.ssl.source_1.0.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.ssl.source_1.0.100.dist.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.compare.source' version='3.5.202.dist'>
       <properties size='2'>
         <property name='artifact.size' value='379866'/>
@@ -1646,14 +1636,14 @@
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.compare.source_3.5.202.dist.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.pde.ds.ui.source' version='1.0.100.dist'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ecf.ssl.source' version='1.0.100.dist'>
       <properties size='2'>
-        <property name='artifact.size' value='85951'/>
-        <property name='download.size' value='85951'/>
+        <property name='artifact.size' value='5566'/>
+        <property name='download.size' value='5566'/>
       </properties>
       <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ds.ui.source_1.0.100.dist.jar'/>
-        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ds.ui.source_1.0.100.dist.jar'/>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.ssl.source_1.0.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ecf.ssl.source_1.0.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.objectweb.asm' version='3.3.2'>
@@ -1664,6 +1654,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.objectweb.asm_3.3.2.jar'/>
         <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.objectweb.asm_3.3.2.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.pde.ds.ui.source' version='1.0.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='85951'/>
+        <property name='download.size' value='85951'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ds.ui.source_1.0.100.dist.jar'/>
+        <property name='file.name' value='/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.pde.ds.ui.source_1.0.100.dist.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.core.runtime.source' version='3.7.0.dist'>

@@ -2,7 +2,7 @@
 <?artifactRepository version='1.1.0'?>
 <repository name='/usr/share/eclipse/dropins/emf' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
   <properties size='1'>
-    <property name='p2.timestamp' value='1371238051499'/>
+    <property name='p2.timestamp' value='1371662631316'/>
   </properties>
   <mappings size='3'>
     <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
@@ -190,16 +190,6 @@
         <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.ecore.change.edit_2.5.0.v200906151043.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.emf.codegen.ecore.ui' version='2.5.0.v200906151043'>
-      <properties size='2'>
-        <property name='artifact.size' value='145641'/>
-        <property name='download.size' value='145641'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.5.0.v200906151043.jar'/>
-        <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.5.0.v200906151043.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.emf.mapping.ecore' version='2.5.0.v200906151043'>
       <properties size='2'>
         <property name='artifact.size' value='5717'/>
@@ -208,6 +198,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.mapping.ecore_2.5.0.v200906151043.jar'/>
         <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.mapping.ecore_2.5.0.v200906151043.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.emf.codegen.ecore.ui' version='2.5.0.v200906151043'>
+      <properties size='2'>
+        <property name='artifact.size' value='145641'/>
+        <property name='download.size' value='145641'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.5.0.v200906151043.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.5.0.v200906151043.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='org.eclipse.update.feature' id='org.eclipse.emf.ecore.editor' version='2.5.0.v200906151043'>
@@ -246,16 +246,6 @@
         <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/features/org.eclipse.emf.codegen.ecore_2.5.0.v200906151043'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.emf' version='2.5.0.v200906151043'>
-      <properties size='2'>
-        <property name='artifact.size' value='5546'/>
-        <property name='download.size' value='5546'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf_2.5.0.v200906151043.jar'/>
-        <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf_2.5.0.v200906151043.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.emf.ecore' version='2.5.0.v200906151043'>
       <properties size='2'>
         <property name='artifact.size' value='1028802'/>
@@ -264,6 +254,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar'/>
         <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.emf' version='2.5.0.v200906151043'>
+      <properties size='2'>
+        <property name='artifact.size' value='5546'/>
+        <property name='download.size' value='5546'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf_2.5.0.v200906151043.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf_2.5.0.v200906151043.jar'/>
       </repositoryProperties>
     </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.emf.databinding.edit' version='1.1.0.v200906151043'>
@@ -538,16 +538,6 @@
         <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.mapping.ui_2.5.0.v200906151043.jar'/>
       </repositoryProperties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.eclipse.emf.common.ui' version='2.5.0.v200906151043'>
-      <properties size='2'>
-        <property name='artifact.size' value='117304'/>
-        <property name='download.size' value='117304'/>
-      </properties>
-      <repositoryProperties size='2'>
-        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.common.ui_2.5.0.v200906151043.jar'/>
-        <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.common.ui_2.5.0.v200906151043.jar'/>
-      </repositoryProperties>
-    </artifact>
     <artifact classifier='osgi.bundle' id='org.eclipse.emf.edit.ui' version='2.5.0.v200906151043'>
       <properties size='2'>
         <property name='artifact.size' value='150815'/>
@@ -556,6 +546,16 @@
       <repositoryProperties size='2'>
         <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.edit.ui_2.5.0.v200906151043.jar'/>
         <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.edit.ui_2.5.0.v200906151043.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.emf.common.ui' version='2.5.0.v200906151043'>
+      <properties size='2'>
+        <property name='artifact.size' value='117304'/>
+        <property name='download.size' value='117304'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.common.ui_2.5.0.v200906151043.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/emf/eclipse/plugins/org.eclipse.emf.common.ui_2.5.0.v200906151043.jar'/>
       </repositoryProperties>
     </artifact>
   </artifacts>

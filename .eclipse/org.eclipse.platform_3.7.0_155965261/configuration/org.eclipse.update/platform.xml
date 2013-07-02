@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config transient="false" date="1371238045911" version="3.0">
+<config transient="false" date="1371662624070" version="3.0">
 	<site enabled="true" updateable="true" policy="USER-EXCLUDE" url="file:dropins/sdk/">
 		<feature id="org.eclipse.sdk" url="features/org.eclipse.sdk_3.7.2.dist-7Q7xALBmjCz0eoBYBlmz-2dHQcaYo4moaxMA31hDVFowy/" version="3.7.2.dist-7Q7xALBmjCz0eoBYBlmz-2dHQcaYo4moaxMA31hDVFowy">
 		</feature>
@@ -143,29 +143,55 @@
 		</feature>
 	</site>
 	<site enabled="true" updateable="true" policy="USER-EXCLUDE" url="file:/home/evenator/.eclipse/org.eclipse.platform_3.7.0_155965261/">
+		<feature id="org.polarion.eclipse.team.svn.connector.svnkit16" url="features/org.polarion.eclipse.team.svn.connector.svnkit16_2.2.2.I20110819-1700/" version="2.2.2.I20110819-1700">
+		</feature>
+		<feature id="org.tigris.subversion.clientadapter.javahl.feature" plugin-identifier="org.tigris.subversion.clientadapter.javahl" url="features/org.tigris.subversion.clientadapter.javahl.feature_1.6.17/" version="1.6.17">
+		</feature>
+		<feature id="org.eclipse.egit" url="features/org.eclipse.egit_2.3.1.201302201838-r/" version="2.3.1.201302201838-r">
+		</feature>
+		<feature id="org.polarion.eclipse.team.svn.connector.svnkit15" url="features/org.polarion.eclipse.team.svn.connector.svnkit15_2.2.2.I20110819-1700/" version="2.2.2.I20110819-1700">
+		</feature>
+		<feature id="org.tigris.subversion.subclipse.graph.feature" plugin-identifier="org.tigris.subversion.subclipse.graph" url="features/org.tigris.subversion.subclipse.graph.feature_1.0.9/" version="1.0.9">
+		</feature>
 		<feature id="org.eclipse.wst.xml_userdoc.feature" url="features/org.eclipse.wst.xml_userdoc.feature_3.3.0.v201102071641-50FYwAkF7B77UBZFDBL/" version="3.3.0.v201102071641-50FYwAkF7B77UBZFDBL">
 		</feature>
 		<feature id="org.eclipse.wst.common_core.feature" url="features/org.eclipse.wst.common_core.feature_3.3.2.v201111030500-7B7DFO9F7RZHOhIjR6Mz-NJ/" version="3.3.2.v201111030500-7B7DFO9F7RZHOhIjR6Mz-NJ">
 		</feature>
-		<feature id="org.python.pydev.feature" plugin-identifier="org.python.pydev" url="features/org.python.pydev.feature_2.7.5.2013052819/" version="2.7.5.2013052819">
-		</feature>
 		<feature id="org.eclipse.mylyn.team_feature" plugin-identifier="org.eclipse.mylyn" url="features/org.eclipse.mylyn.team_feature_3.6.5.v20120215-0100/" version="3.6.5.v20120215-0100">
-		</feature>
-		<feature id="org.eclipse.egit" url="features/org.eclipse.egit_2.3.1.201302201838-r/" version="2.3.1.201302201838-r">
-		</feature>
-		<feature id="org.eclipse.wst.xml_ui.feature" plugin-identifier="org.eclipse.wst.xml.ui" url="features/org.eclipse.wst.xml_ui.feature_3.3.2.v201112072049-7H7EFZ7DxumTmce4khcSkIiqoD8eDMKlT8Oz011P/" version="3.3.2.v201112072049-7H7EFZ7DxumTmce4khcSkIiqoD8eDMKlT8Oz011P">
-		</feature>
-		<feature id="org.dadacoalition.yedit" url="features/org.dadacoalition.yedit_0.0.11/" version="0.0.11">
-		</feature>
-		<feature id="org.eclipse.wst.common_ui.feature" url="features/org.eclipse.wst.common_ui.feature_3.3.2.v201111030500-7C79FVsEdhO_sfog9oNekiJkS7Nz00OK/" version="3.3.2.v201111030500-7C79FVsEdhO_sfog9oNekiJkS7Nz00OK">
-		</feature>
-		<feature id="org.eclipse.mylyn_feature" plugin-identifier="org.eclipse.mylyn" url="features/org.eclipse.mylyn_feature_3.6.5.v20120215-0100/" version="3.6.5.v20120215-0100">
 		</feature>
 		<feature id="org.eclipse.wst.xml_core.feature" url="features/org.eclipse.wst.xml_core.feature_3.3.2.v201112072049-7C7OFeMF7RZHQOIsNANyRc/" version="3.3.2.v201112072049-7C7OFeMF7RZHQOIsNANyRc">
 		</feature>
+		<feature id="org.eclipse.jgit" url="features/org.eclipse.jgit_2.3.1.201302201838-r/" version="2.3.1.201302201838-r">
+		</feature>
+		<feature id="org.tigris.subversion.subclipse.mylyn" url="features/org.tigris.subversion.subclipse.mylyn_3.0.0/" version="3.0.0">
+		</feature>
+		<feature id="org.gna.eclox" url="features/org.gna.eclox_0.8.0/" version="0.8.0">
+		</feature>
+		<feature id="com.collabnet.subversion.merge.feature" plugin-identifier="com.collabnet.subversion.merge" url="features/com.collabnet.subversion.merge.feature_2.2.4/" version="2.2.4">
+		</feature>
+		<feature id="org.tigris.subversion.subclipse" plugin-identifier="org.tigris.subversion.subclipse.core" url="features/org.tigris.subversion.subclipse_1.6.18/" version="1.6.18">
+		</feature>
+		<feature id="org.polarion.eclipse.team.svn.connector.svnkit16l" url="features/org.polarion.eclipse.team.svn.connector.svnkit16l_2.2.2.I20110819-1700/" version="2.2.2.I20110819-1700">
+		</feature>
+		<feature id="org.eclipse.wst.common_ui.feature" url="features/org.eclipse.wst.common_ui.feature_3.3.2.v201111030500-7C79FVsEdhO_sfog9oNekiJkS7Nz00OK/" version="3.3.2.v201111030500-7C79FVsEdhO_sfog9oNekiJkS7Nz00OK">
+		</feature>
+		<feature id="org.dadacoalition.yedit" url="features/org.dadacoalition.yedit_0.0.11/" version="0.0.11">
+		</feature>
+		<feature id="org.polarion.eclipse.team.svn.connector" url="features/org.polarion.eclipse.team.svn.connector_2.2.2.I20110819-1700/" version="2.2.2.I20110819-1700">
+		</feature>
 		<feature id="org.eclipse.mylyn.context_feature" plugin-identifier="org.eclipse.mylyn" url="features/org.eclipse.mylyn.context_feature_3.6.5.v20120215-0100/" version="3.6.5.v20120215-0100">
 		</feature>
-		<feature id="org.eclipse.jgit" url="features/org.eclipse.jgit_2.3.1.201302201838-r/" version="2.3.1.201302201838-r">
+		<feature id="org.tigris.subversion.clientadapter.feature" plugin-identifier="org.tigris.subversion.clientadapter" url="features/org.tigris.subversion.clientadapter.feature_1.6.12/" version="1.6.12">
+		</feature>
+		<feature id="org.eclipse.team.svn" url="features/org.eclipse.team.svn_0.7.9.I20110819-1700/" version="0.7.9.I20110819-1700">
+		</feature>
+		<feature id="org.python.pydev.feature" plugin-identifier="org.python.pydev" url="features/org.python.pydev.feature_2.7.5.2013052819/" version="2.7.5.2013052819">
+		</feature>
+		<feature id="org.eclipse.wst.xml_ui.feature" plugin-identifier="org.eclipse.wst.xml.ui" url="features/org.eclipse.wst.xml_ui.feature_3.3.2.v201112072049-7H7EFZ7DxumTmce4khcSkIiqoD8eDMKlT8Oz011P/" version="3.3.2.v201112072049-7H7EFZ7DxumTmce4khcSkIiqoD8eDMKlT8Oz011P">
+		</feature>
+		<feature id="org.eclipse.mylyn_feature" plugin-identifier="org.eclipse.mylyn" url="features/org.eclipse.mylyn_feature_3.6.5.v20120215-0100/" version="3.6.5.v20120215-0100">
+		</feature>
+		<feature id="org.tigris.subversion.clientadapter.svnkit.feature" plugin-identifier="org.tigris.subversion.clientadapter.svnkit" url="features/org.tigris.subversion.clientadapter.svnkit.feature_1.6.15/" version="1.6.15">
 		</feature>
 	</site>
 </config>
