@@ -1,3 +1,10 @@
+""""""
+" Pathogen
+""""""
+
+call pathogen#infect()
+call pathogen#helptags()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -7,6 +14,9 @@ set history=700
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+
+" Press F2 to enable pastemode (disables autoindent)
+set pastetoggle=<F2>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -38,7 +48,7 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
+set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -63,9 +73,9 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -89,3 +99,10 @@ map <leader>tm :tabmove
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => File Types
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufNewFile,BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.urdf set filetype=xml
+au BufNewFile,BufRead *.xacro set filetype=xml

@@ -117,11 +117,6 @@ GIT_EDITOR=$EDITOR
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="$PS1$YELLOW\$(__git_ps1)$DEFCOLOR \$ "
 
-#ROS
-#source /opt/ros/fuerte/setup.bash
-#export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros/SUMET/fuerte:~/SUMET
-
 #ROS Workspace
-#source ~/DSAT/setup.bash
 export ROSLAUNCH_SSH_UNKNOWN=1
 export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
