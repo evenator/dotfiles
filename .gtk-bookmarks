@@ -9,4 +9,5 @@ file:///home/ed/masters
 file:///home/ed/masters/RobotStudio/RAPID
 sftp://ranger@crystal-1165/home/ranger ranger@crystal-1165
 sftp://sumet@crystal-1165/home/sumet sumet@crystal-1165
-sftp://ranger@129.162.199.49/home/ranger localization box
+smb://ADS;evenator@129.162.112.101/sumet_store/ sumet_store
+sftp://marti@localization-1165/home/marti marti@localization-1165
