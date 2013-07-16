@@ -1,5 +1,5 @@
 MAX_RECENT_WORKSPACES=5
-RECENT_WORKSPACES=/home/evenator/dsat_support\n/home/evenator/ranger_workspace\n/home/evenator/onr_dev_workspace\n/home/evenator/dsat\n/home/evenator/sumet_workspace
+RECENT_WORKSPACES=/home/evenator/dotfiles/eclipse/default_workspace\n/home/evenator/dsat\n/home/evenator/dsat_support\n/home/evenator/ranger_workspace\n/home/evenator/onr_dev_workspace
 RECENT_WORKSPACES_PROTOCOL=3
 SHOW_WORKSPACE_SELECTION_DIALOG=true
 eclipse.preferences.version=1
