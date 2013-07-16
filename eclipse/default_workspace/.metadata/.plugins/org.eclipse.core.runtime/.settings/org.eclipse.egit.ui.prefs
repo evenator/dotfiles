@@ -1,0 +1,5 @@
+decorator_filetext_decoration={staged\:+}{dirty\:*} {name}
+decorator_foldertext_decoration={staged\:+}{dirty\:*} {name}
+decorator_projecttext_decoration={staged\:+}{dirty\:*} {name} [{repository} {branch}{ branch_status}]
+eclipse.preferences.version=1
+merge_mode=0
