@@ -11,3 +11,7 @@ sftp://ranger@crystal-1165/home/ranger ranger@crystal-1165
 sftp://sumet@crystal-1165/home/sumet sumet@crystal-1165
 smb://ADS;evenator@129.162.112.101/sumet_store/ sumet_store
 sftp://marti@localization-1165/home/marti marti@localization-1165
+sftp://dsat@dsat-hmmwv/home/dsat dsat-hmmwv
+file:///home/evenator/Documents
+sftp://dsat@dsat-hmmwv-localization/home/dsat dsat-hmmwv-localization
+sftp://dsat@129.162.199.79/ mrzr2localization
