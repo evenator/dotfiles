@@ -68,7 +68,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: $(echo $PWD | sed "s:^$HOME:~:")\007"'
     ;;
 *)
     ;;
@@ -87,7 +87,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -halF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -122,5 +122,13 @@ export ROSLAUNCH_SSH_UNKNOWN=1
 export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 
 export PATH="$HOME/scripts:$PATH"
+
+#For Gitlab access
+source .keys.sh
+
+#For April Toolkit
+export CLASSPATH=$CLASSPATH:/usr/share/java/gluegen-rt.jar:/usr/local/share/java/lcm.jar:$HOME/april/java/april.jar:./
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/april/lib
+alias java='java -ea -server'
 
 source ~/.bash_prompt
