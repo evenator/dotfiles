@@ -10,3 +10,5 @@
         ui = true
 [merge]
 	tool = kdiff3
+[push]
+	default = upstream
