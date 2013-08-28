@@ -124,7 +124,7 @@ export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o 
 export PATH="$HOME/scripts:$PATH"
 
 #For Gitlab access
-source .keys.sh
+source ~/.keys.sh
 
 #For April Toolkit
 export CLASSPATH=$CLASSPATH:/usr/share/java/gluegen-rt.jar:/usr/local/share/java/lcm.jar:$HOME/april/java/april.jar:./
