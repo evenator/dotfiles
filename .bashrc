@@ -132,3 +132,17 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/april/lib
 alias java='java -ea -server'
 
 source ~/.bash_prompt
+
+WS=`wmctrl -d | grep "*" -n -o`
+if [ ${WS} = "1:*" ]; then
+    echo "Working in DSAT Dev Workspace"
+    source ~/dsat/setup.bash
+elif [ ${WS} = "2:*" ]; then
+    echo "Working in DSAT 2.0 Support Workspace"
+    source ~/dsat_2.0_support/setup.bash
+else
+    source /opt/ros/fuerte/setup.bash
+    echo "Unknown ROS fuerte Workspace"
+fi
+
+export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
