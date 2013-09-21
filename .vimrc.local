@@ -4,4 +4,20 @@ set shiftwidth=2
 set softtabstop=2
 set nocursorline
 color ir_black
+set clipboard=unnamedplus
 autocmd BufRead,BufNewFile *.launch setfiletype roslaunch
+
+" Neocomplete {
+" https://github.com/Shougo/neocomplcache.vim/wiki/neocomplcache-tips%3A
+
+" Disable autopopup
+let g:neocomplcache_disable_auto_complete = 1
+
+" Autocomplete on tab
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+function! s:check_back_space()"{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~ '\s'
+endfunction"}}
+
+" }
