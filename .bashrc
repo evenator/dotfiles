@@ -120,6 +120,10 @@ export PS1="$PS1$YELLOW\$(__git_ps1)$DEFCOLOR \$ "
 #ROS Workspace
 export ROSLAUNCH_SSH_UNKNOWN=1
 export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+if [ -z "$ROS_IP" ]
+then
+    export ROS_IP=$(ip addr show wlan0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+fi
 
 export PATH="$HOME/scripts:$PATH"
 
