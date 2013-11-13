@@ -139,22 +139,6 @@ alias java='java -ea -server'
 
 source ~/.bash_prompt
 
-WS=`wmctrl -d | grep "*" -n -o`
-if [ ${WS} = "1:*" ]; then
-    echo "Working in DSAT Dev Workspace"
-    source ~/dsat/setup.bash
-elif [ ${WS} = "2:*" ]; then
-    echo "Working in DSAT 2.0 Support Workspace"
-    source ~/dsat_2.0_support/setup.bash
-elif [ ${WS} = "3:*" ]; then
-    echo "Working in RANGER Workspace"
-    source ~/ranger_workspace/setup.bash
-elif [ ${WS} = "4:*" ]; then
-    source ~/persistent_world_model/setup.bash
-    echo "Persistent World Model Workspace"
-else
-    source /opt/ros/fuerte/setup.bash
-    echo "Unknown ROS fuerte Workspace"
-fi
-
 export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
+
+source ~/.workspace
