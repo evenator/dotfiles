@@ -1,4 +1,5 @@
 #! /bin/bash 
+WS=`wmctrl -d | grep "*" -n -o`
 if [ "${WS}" = "1:*" ]; then
     echo "Working in DSAT Dev Workspace"
     source ~/dsat/setup.bash
