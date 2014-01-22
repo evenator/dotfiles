@@ -147,8 +147,9 @@ if [ -z "$ROS_IP" ]
 then
     export ROS_IP=$(ip addr show wlan0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 fi
+export ROS_MASTER_URI="http://$ROS_IP:11311"
 
-export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
 
 #For Gitlab access
 source ~/.keys.sh
