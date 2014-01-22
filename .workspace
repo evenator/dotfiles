@@ -1,21 +1,19 @@
 #! /bin/bash 
 WS=`wmctrl -d | grep "*" -n -o`
 if [ "${WS}" = "1:*" ]; then
+    source ~/code/dsat_dev/setup.bash &&
     echo "Working in DSAT Dev Workspace"
-    source ~/dsat/setup.bash
 elif [ "${WS}" = "2:*" ]; then
+    source ~/code/dsat_2.0_support/setup.bash &&
     echo "Working in DSAT 2.0 Support Workspace"
-    source ~/dsat_2.0_support/setup.bash
 elif [ "${WS}" = "3:*" ]; then
-    echo "Working in RANGER Workspace"
-    source ~/ranger_workspace/setup.bash
+    echo "Working in Android Workspace"
 elif [ "${WS}" = "4:*" ]; then
-    source ~/persistent_world_model/setup.bash
+    source ~/persistent_world_model/setup.bash &&
     echo "Persistent World Model Workspace"
 elif [ "${WS}" = "5:*" ]; then
-    source ~/code/dsat_2.0_dev/setup.bash
-    echo "DSAT 2.0 Dev Workspace"
+    source ~/code/dsat_dev_hydro/setup.bash &&
+    echo "DSAT Dev Hydro Workspace"
 else
-    source /opt/ros/fuerte/setup.bash
-    echo "Unknown ROS fuerte Workspace"
+    echo "Unknown Workspace"
 fi
