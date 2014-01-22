@@ -92,6 +92,27 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias quit='exit'
+alias less='less -R'
+
+if [ -n `which caja` ]; then
+  open_browser(){
+    if [ $# -lt 1 ]; then
+      caja . 1>/dev/null 2>/dev/null &
+    else
+      caja "$1" 1>/dev/null 2>/dev/null &
+    fi
+  }
+else
+  open_browser(){
+    if [ $# -lt 1 ]; then
+      nautilus . 1>/dev/null 2>/dev/null &
+    else
+      nautilus "$1" 1>/dev/null 2>/dev/null &
+    fi
+  }
+fi
+export -f open_browser
+alias open='open_browser'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
