@@ -9,6 +9,6 @@
 [color]
         ui = true
 [merge]
-	tool = kdiff3
+	tool = meld
 [push]
 	default = upstream
