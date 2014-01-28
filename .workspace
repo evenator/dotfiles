@@ -4,7 +4,7 @@ if [ "${WS}" = "1:*" ]; then
     source ~/code/dsat_dev/setup.bash &&
     echo "Working in DSAT Dev Workspace"
 elif [ "${WS}" = "2:*" ]; then
-    source ~/code/dsat_2.0_support/setup.bash &&
+    source ~/dsat_2.0_support/setup.bash &&
     echo "Working in DSAT 2.0 Support Workspace"
 elif [ "${WS}" = "3:*" ]; then
     echo "Working in Android Workspace"
