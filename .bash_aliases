@@ -70,19 +70,32 @@ export -f swri_rostopic
 alias rostopic='swri_rostopic'
 
 swri_rosmake(){
-  if [ "$1" == "retry" ]; then
+  special_args=`getopt -q -l "retry eclipse" -o "asr" -- $@`
+  echo $special_args
+  if [[ $special_args =~ "--retry" ]]; then
     file=`find ~/.ros/rosmake/ -iname buildfailures.txt -printf "%C@ %p\n" |
       sort -rn |
       head -n 1 |
       cut -d" " -f2`
-
-    echo $file
-    if [[ -n `tail -n+2 $file` ]]
-      then
-      tail -n+2 $file | xargs -t rosmake -sr
+    echo "Retrying packages listed in $file"
+    packages="`tail -n+2 $file`"
+    opts=`sed 's/--retry//' <<<$special_args`
+    if [[ -n $packages ]]; then
+      echo $opts $packages | xargs -t rosmake
     else
       echo "Nothing to build"
     fi
+  elif [[ $special_args =~ "--eclipse" ]]; then
+    if [[ $special_args =~ "-a" ]]; then
+      echo "Making all eclipse projects..."
+      packages=`rospack list`
+    else
+      echo "Making specified eclipse projects..."
+      packages=`gawk -F" -- " '{print $2}' <<<$special_args`
+    fi
+    for package in $packages; do
+      make -C `rospack find $package` eclipse-project
+    done
   else
     rosmake $@
   fi
