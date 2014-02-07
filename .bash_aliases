@@ -23,8 +23,8 @@ alias l='ls -CF'
 # Cuz why not
 alias quit='exit'
 
-# Less with color
-alias less='less -R'
+# Less with color and line numbers
+alias less='less -NR'
 
 # Add an "open" command to open a file using the file browser (caja or nautilus)
 # Apparently the OSX terminal can do this. It's handy.
@@ -54,17 +54,35 @@ export -f open
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-swri_rostopic(){
-  if [ "$1" == "table" ]; then
-    shift
-    rostopic list $@ --verbose | awk '!/(Published topics:)|(Subscribed topics:)/{print $2 " " $3 " " $4 " " substr($5,0,1)}' | sort --key=2 --human-numeric-sort | column -t
-  elif [ "$1" == nopub ]; then
-    comm -13 <(rostopic list -p) <(rostopic list -s) # subscribed, but not published
-  elif [ "$1" == nosub ]; then
-    comm -23 <(rostopic list -p) <(rostopic list -s) # published, but not subscribed  
-  else
-    rostopic $@
-  fi
+swri_rostopic() {
+  case "$1" in
+    table)
+      shift
+
+      pub_text='Published topics:'
+      sub_text='Subscribed topics:'
+      print_cmd='print $2 " " $3 " " $4 " " substr($5, 0, 1)'
+
+      rostopic list "$@" --verbose | \
+      awk "!/(${pub_text})|(${sub_text})/{${print_cmd}}" | \
+      sort --key=2 --human-numeric-sort | \
+      column -t -c 120
+      ;;
+
+    nopub)
+      # subscribed, but not published
+      comm -13 --nocheck-order <(rostopic list -p) <(rostopic list -s)
+      ;;
+
+    nosub)
+      # published, but not subscribed
+      comm -23 --nocheck-order <(rostopic list -p) <(rostopic list -s)
+      ;;
+
+    *)
+      rostopic "$@"
+      ;;
+  esac
 }
 export -f swri_rostopic
 alias rostopic='swri_rostopic'
