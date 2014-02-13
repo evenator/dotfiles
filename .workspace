@@ -9,8 +9,8 @@ elif [ "${WS}" = "2:*" ]; then
 elif [ "${WS}" = "3:*" ]; then
     echo "Working in Android Workspace"
 elif [ "${WS}" = "4:*" ]; then
-    source ~/persistent_world_model/setup.bash &&
-    echo "Persistent World Model Workspace"
+    source ~/code/persistent_map/setup.bash &&
+    echo "Persistent Map Workspace"
 elif [ "${WS}" = "5:*" ]; then
     source ~/code/dsat_dev_hydro/setup.bash &&
     echo "DSAT Dev Hydro Workspace"
