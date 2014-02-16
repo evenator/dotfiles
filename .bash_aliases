@@ -31,7 +31,7 @@ alias less='less -NR'
 # Usage:
 #   open                # Opens the current directory
 #   open [file [file] ] # Open the file(s) or directories in the browser
-if [ -n `which caja` ]; then
+if [ -n "`which caja`" ]; then
   open(){
     if [ $# -lt 1 ]; then
       caja . 1>/dev/null 2>/dev/null &
