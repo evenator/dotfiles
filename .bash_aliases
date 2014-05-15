@@ -136,3 +136,8 @@ rosgit(){
 alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
 
 alias rosdep='rosdep --os="ubuntu:precise"'
+
+alias pulldocs='rsync -vaz 'boomer:/home/evenator/Documents/' /home/evenator/Documents'
+alias pushdocs='rsync -vaz /home/evenator/Documents/ boomer:/home/evenator/Documents/'
+alias mergedocs='pushdocs && pulldocs'
+alias bashrc='source ~/.bashrc'
