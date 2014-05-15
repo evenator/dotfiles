@@ -134,3 +134,7 @@ export -f convert_stamp
 
 alias launchgrep="grep -r --include='*.launch' --include='*.xml'"
 alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
+
+alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
+
+alias rosdep='rosdep --os="ubuntu:precise"'
