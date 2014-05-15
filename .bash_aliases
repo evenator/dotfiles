@@ -126,3 +126,11 @@ rosgit(){
     fi
   done
 }
+
+convert_stamp(){
+  date -d@$1
+}
+export -f convert_stamp
+
+alias launchgrep="grep -r --include='*.launch' --include='*.xml'"
+alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
