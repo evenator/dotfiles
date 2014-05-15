@@ -1,3 +1,4 @@
+#! /bin/bash
 # Bash aliases file
 # Author: Ed Venator (evenator@swri.org)
 
@@ -20,34 +21,29 @@ alias ll='ls -halF'
 alias la='ls -A'
 alias l='ls -CF'
 
+#Use human-readable filesizes
+alias du="du -h"
+alias df="df -h"
+
 # Cuz why not
 alias quit='exit'
 
 # Less with color and line numbers
 alias less='less -NR'
 
-# Add an "open" command to open a file using the file browser (caja or nautilus)
+# Add an "open" command to open a file using the file browser
 # Apparently the OSX terminal can do this. It's handy.
 # Usage:
-#   open                # Opens the current directory
-#   open [file [file] ] # Open the file(s) or directories in the browser
-if [ -n `which caja` ]; then
-  open(){
-    if [ $# -lt 1 ]; then
-      caja . 1>/dev/null 2>/dev/null &
-    else
-      caja "$1" 1>/dev/null 2>/dev/null &
-    fi
-  }
+#   open       # Opens the current directory
+#   open file  # Open the file or directory in the browser
+# Add an "open" command to open a file using the file browser
+open(){
+if [ $# -lt 1 ]; then
+  gnome-open . 
 else
-  open(){
-    if [ $# -lt 1 ]; then
-      nautilus . 1>/dev/null 2>/dev/null &
-    else
-      nautilus "$1" 1>/dev/null 2>/dev/null &
-    fi
-  }
+  gnome-open "$1"
 fi
+}
 export -f open
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -89,7 +85,6 @@ alias rostopic='swri_rostopic'
 
 swri_rosmake(){
   special_args=`getopt -q -l "retry eclipse" -o "asr" -- $@`
-  echo $special_args
   if [[ $special_args =~ "--retry" ]]; then
     file=`find ~/.ros/rosmake/ -iname buildfailures.txt -printf "%C@ %p\n" |
       sort -rn |
@@ -106,14 +101,13 @@ swri_rosmake(){
   elif [[ $special_args =~ "--eclipse" ]]; then
     if [[ $special_args =~ "-a" ]]; then
       echo "Making all eclipse projects..."
-      packages=`rospack list`
+      package_paths=`rospack list | cut -d" " -f2`
     else
       echo "Making specified eclipse projects..."
-      packages=`gawk -F" -- " '{print $2}' <<<$special_args`
+      package_paths=`gawk -F" -- " '{print $2}' <<<$special_args |
+        xargs -n1 rospack find`
     fi
-    for package in $packages; do
-      make -C `rospack find $package` eclipse-project
-    done
+    echo $package_paths | xargs -d" " -t -n1 -i{} make -C {} eclipse-project
   else
     rosmake $@
   fi
@@ -132,6 +126,14 @@ rosgit(){
     fi
   done
 }
+
+convert_stamp(){
+  date -d@$1
+}
+export -f convert_stamp
+
+alias launchgrep="grep -r --include='*.launch' --include='*.xml'"
+alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
 
 alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
 
