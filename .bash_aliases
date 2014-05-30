@@ -100,7 +100,7 @@ swri_rosmake(){
     fi
   elif [[ $special_args =~ "--eclipse" ]]; then
     if [[ $special_args =~ "-a" ]]; then
-      echo "Making all eclipse projects..."
+      echo "Making all eclipse projects..."threaded_segment_localizer
       package_paths=`rospack list | cut -d" " -f2`
     else
       echo "Making specified eclipse projects..."
@@ -126,6 +126,7 @@ rosgit(){
     fi
   done
 }
+export -f rosgit
 
 convert_stamp(){
   date -d@$1
@@ -138,3 +139,5 @@ alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
 alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
 
 alias rosdep='rosdep --os="ubuntu:precise"'
+
+alias bashrc='source ~/.bashrc'

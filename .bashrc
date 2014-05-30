@@ -84,3 +84,12 @@ export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
 export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 export ROS_HOSTNAME=`hostname`
 export ROSLAUNCH_SSH_UNKNOWN=1
+
+#export ROS_MASTER_URI="http://rubicon-c11-vision:11311"
+export ROS_MASTER_URI="http://localhost:11311"
+
+export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages"
+
+echo "ROS Master is $ROS_MASTER_URI"
+
+ulimit -c unlimited

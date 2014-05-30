@@ -5,15 +5,16 @@ if [ "${WS}" = "1:*" ]; then
     echo "Working in DSAT Dev Workspace"
 elif [ "${WS}" = "2:*" ]; then
     source ~/code/dsat_2.0_support/setup.bash &&
-    echo "Working in DSAT 2.0 Support Workspace"
+    echo "Working in DSAT 2.3 Support Workspace"
 elif [ "${WS}" = "3:*" ]; then
     echo "Working in Android Workspace"
 elif [ "${WS}" = "4:*" ]; then
-    source ~/persistent_world_model/setup.bash &&
-    echo "Persistent World Model Workspace"
+    source ~/code/honda_localization/setup.bash &&
+    echo "Honda Localization Workspace"
 elif [ "${WS}" = "5:*" ]; then
     source ~/code/dsat_dev_hydro/setup.bash &&
     echo "DSAT Dev Hydro Workspace"
 else
-    echo "Unknown Workspace"
+    source /opt/ros/fuerte/setup.bash &&
+    echo "No Workspace (fuerte)"
 fi
