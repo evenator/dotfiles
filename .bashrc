@@ -84,3 +84,11 @@ export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
 export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 export ROS_HOSTNAME=`hostname`
 export ROSLAUNCH_SSH_UNKNOWN=1
+
+export ROS_MASTER_URI="http://mrzr-8789:11311"
+export ROS_MASTER_URI="http://dsat-hmmwv:11311"
+#export ROS_MASTER_URI="http://rubicon-c11:11311"
+#export ROS_MASTER_URI="http://192.168.70.100:11311"  # Acura 1
+ulimit -c unlimited
+
+echo "ROS Master is $ROS_MASTER_URI"
