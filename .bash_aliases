@@ -39,9 +39,9 @@ alias less='less -NR'
 # Add an "open" command to open a file using the file browser
 open(){
 if [ $# -lt 1 ]; then
-  gnome-open . 
+  gnome-open . 1>/dev/null 2>/dev/null
 else
-  gnome-open "$1"
+  gnome-open "$1" 1>/dev/null 2>/dev/null
 fi
 }
 export -f open
@@ -121,12 +121,43 @@ rosgit(){
     if [ -d "$dir/.git" ] && 
         git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
       echo `basename "$dir"`
-      git --work-tree="$dir" --git-dir="$dir/.git" $@
+      git --work-tree="$dir" --git-dir="$dir/.git" "$@"
       echo "---"
     fi
   done
 }
 export -f rosgit
+
+my_rosws(){
+  case "$1" in
+    checkout)
+      shift
+        for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
+        do
+          if [ -d "$dir/.git" ] && 
+              git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+            echo `basename "$dir"`
+            git --work-tree="$dir" --git-dir="$dir/.git" fetch
+            if [ -n "$(git --work-tree="$dir" --git-dir="$dir/.git" branch --list -a | awk -F'[ /]' '{print $NF'} | grep "^$1\$")" ]
+              then
+                rosws set $dir -y -v $1 >/dev/null 2>/dev/null
+                git --work-tree="$dir" --git-dir="$dir/.git" checkout "$1"
+                echo "Changed to branch $1"
+                git --work-tree="$dir" --git-dir="$dir/.git" merge --ff-only origin/$1
+              else
+                echo "Branch $1 does not exist"
+            fi
+            echo "---"
+          fi
+        done
+      ;;
+    *)
+      rosws "$@"
+      ;;
+  esac
+}
+export -f my_rosws
+alias rosws='my_rosws'
 
 convert_stamp(){
   date -d@$1
@@ -135,6 +166,9 @@ export -f convert_stamp
 
 alias launchgrep="grep -r --include='*.launch' --include='*.xml'"
 alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
+alias msggrep="grep -r --include='*.msg' --include='*.srv'"
+
+alias rosfind='find $ROS_WORKSPACE'
 
 alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
 
