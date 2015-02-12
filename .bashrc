@@ -59,7 +59,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Prompt
-source ~/.bash_prompt
+if [ -f ~/.bash_prompt ]; then
+    source ~/.bash_prompt
+fi
 
 # Path
 export PATH="$PATH"
