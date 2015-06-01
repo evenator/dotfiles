@@ -68,7 +68,7 @@ export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
 source ~/.keys.sh
 
 # Set up workspace
-source ~/.workspace
+source ~/code/dsat/setup.bash
 
 # Alias definitions. These go after the workspace setup script
 if [ -f ~/.bash_aliases ]; then
@@ -76,8 +76,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Editor settings
-EDITOR=vim
-GIT_EDITOR=$EDITOR
+export EDITOR=vim
+export GIT_EDITOR=$EDITOR
 
 # ROS Stuff
 export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
@@ -85,9 +85,13 @@ export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o 
 export ROS_HOSTNAME=`hostname`
 export ROSLAUNCH_SSH_UNKNOWN=1
 
-export ROS_MASTER_URI="http://mrzr-8789:11311"
-export ROS_MASTER_URI="http://dsat-hmmwv:11311"
+export ROS_MASTER_URI="http://localhost:11311"
+#export ROS_MASTER_URI="http://mrzr-8801:11311"
+#export ROS_MASTER_URI="http://mrzr-8789:11311"
+#export ROS_MASTER_URI="http://mrzr-8787:11311"
+#export ROS_MASTER_URI="http://dsat-hmmwv:11311"
 #export ROS_MASTER_URI="http://rubicon-c11:11311"
+#export ROS_MASTER_URI="http://rubicon-c12:11311"
 #export ROS_MASTER_URI="http://192.168.70.100:11311"  # Acura 1
 ulimit -c unlimited
 

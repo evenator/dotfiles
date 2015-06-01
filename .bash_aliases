@@ -115,6 +115,17 @@ swri_rosmake(){
 export -f swri_rosmake
 alias rosmake='swri_rosmake'
 
+rosrepodo(){
+  for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
+  do
+     if [ -d "$dir/.git" ] &&
+         git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+       echo "cd $dir;" $@
+       eval "cd $dir;" $@
+     fi
+  done
+}
+
 rosgit(){
   for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
   do
@@ -177,3 +188,32 @@ alias pulldocs='rsync -vaz 'boomer:/home/evenator/Documents/' /home/evenator/Doc
 alias pushdocs='rsync -vaz /home/evenator/Documents/ boomer:/home/evenator/Documents/'
 alias mergedocs='pushdocs && pulldocs'
 alias bashrc='source ~/.bashrc'
+
+set_ff()
+{
+  rosparam set /vehicle_interface/low_level_controller/gasbrake_control/drive/feedforward_b $1
+  rosservice call /vehicle_interface/low_level_controller/reconfigure "{}"
+}
+export -f set_ff
+
+alias get_ff="rosparam get /vehicle_interface/low_level_controller/gasbrake_control/drive/feedforward_b"
+
+pandoc-pdf(){
+  PDF_FILE=`expr "${@: -1}" : '\(.*\.\)'`"pdf"
+  pandoc -o "$PDF_FILE" -V geometry:margin=1.0in "$@" && echo "Created $PDF_FILE"
+}
+export -f pandoc-pdf
+
+vpn(){
+  snx
+  echo "VPN connected"
+  echo "Press Ctrl+C to disconnect"
+  ssh -N -D 1080 boomer 2>/dev/null
+  echo "SSH proxy disconnected"
+  snx -d 1>/dev/null 2>/dev/null
+  echo "VPN disconnected"
+}
+alias ssh_proxy='ssh -f -N -D 1080 boomer.dyn.datasys.swri.edu'
+
+alias speed_hud='rxplot /localization/near_field_odom/twist/twist/linear/x,/vehicle_interface/speed_setpoint/speed /localization/gps/speed,/localization/near_field_odom/twist/twist/linear/x /can/mototron_odometry/speed'
+alias encoder_hud='rxplot /localization/semi_unified_localization_node/can_odom_elems/v_rear_driver,/localization/semi_unified_localization_node/can_odom_elems/v_rear_passenger /localization/semi_unified_localization_node/can_odom_elems/v_rear_driver /localization/semi_unified_localization_node/can_odom_elems/v_rear_passenger'
