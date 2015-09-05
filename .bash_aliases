@@ -41,7 +41,9 @@ open(){
 if [ $# -lt 1 ]; then
   gnome-open . 1>/dev/null 2>/dev/null
 else
-  gnome-open "$1" 1>/dev/null 2>/dev/null
+  for FILE in $@; do
+    gnome-open "$FILE" 1>/dev/null 2>/dev/null
+  done
 fi
 }
 export -f open
@@ -121,15 +123,38 @@ rosgit(){
     if [ -d "$dir/.git" ] && 
         git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
       echo `basename "$dir"`
+      echo "========"
+      echo ""
       git --work-tree="$dir" --git-dir="$dir/.git" "$@"
-      echo "---"
+      echo ""
     fi
   done
 }
 export -f rosgit
 
+repodo(){
+  for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
+  do
+    if [ -d "$dir/.git" ] && 
+        git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+      echo `basename "$dir"`
+      echo "========"
+      echo ""
+      (cd $dir; bash -c "$@")
+      echo ""
+    fi
+  done
+}
+export -f repodo
+
 my_rosws(){
   case "$1" in
+    cd)
+      shift
+      LOCALNAME=$(rosws info --only=localname | awk "/$1/{print length, \$0}" | sort -n -s | cut -d' ' -f2- | head -1)
+      echo $LOCALNAME
+      cd `rosws info --only=path $LOCALNAME`
+      ;;
     checkout)
       shift
         for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
@@ -175,3 +200,84 @@ alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $
 alias rosdep='rosdep --os="ubuntu:precise"'
 
 alias bashrc='source ~/.bashrc'
+
+pandoc-pdf(){
+  PDF_FILE=`expr "${@: -1}" : '\(.*\.\)'`"pdf"
+  pandoc -o "$PDF_FILE" -V geometry:margin=1.0in "$@" && echo "Created $PDF_FILE"
+}
+export -f pandoc-pdf
+
+alias catkin_make='smart_catkin_make'
+smart_catkin_make() {
+  # Save the current directory; '-n' just pushes the
+  # stack instead of actually changing directories.
+  pushd -n $(pwd);
+  # Get to the root of the workspace.
+  roscd;
+  # Just kidding! Now get to the root of the workspace.
+  cd ..;
+  # We've just aliased `catkin_make`, so issuing it here
+  # would recurse infinitely. Instead, we can ignore all
+  # aliases by prefixing the command with `command`
+  command catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo;
+  # Go back where you came from!
+  popd;
+}
+
+qotd(){
+ curl -s http://bash.org/?random1|grep -oE "<p class=\"quote\">.*</p>.*</p>"|grep -oE "<p class=\"qt.*?</p>"|sed -e 's/<\/p>/\n/g' -e 's/<p class=\"qt\">//g' -e 's/<p class=\"qt\">//g'|perl -ne 'use HTML::Entities;print decode_entities($_),"\n"' | head -n1
+}
+export -f qotd
+
+alias rosdep='rosdep --os=ubuntu:precise'
+
+if [ `date '+%m%d'` = '0401' ]; then
+special_echo(){
+  if [ -t 1 ]; then
+    cowsay "$@"
+  else
+    /bin/echo $@
+  fi
+}
+
+special_cat(){
+  if [ -t 1 ]; then
+    cat $@ | cowsay
+  else
+    /bin/cat $@
+  fi
+}
+
+alias echo='special_echo'
+alias cat='special_cat'
+fi
+
+extended_catkin(){
+  if [ $1 = 'cd' ]; then
+    pkg_path=$(catkin locate "$2")
+    if [ -n $pkg_path ]; then cd "$pkg_path"; fi
+  else
+    catkin "$@"
+  fi
+}
+alias catkin='extended_catkin'
+
+#TODO: Make this work recursively up the directory tree to the git root
+#
+alias rsync_git='rsync --exclude=".git" --filter=":- .gitignore"'
+
+gitkin(){
+  for dir in `wstool info --only=path  | sed 's/\:/ /g'`
+  do
+    if [ -d "$dir/.git" ] && 
+        git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+      echo `basename "$dir"`
+      echo "========"
+      echo ""
+      git --work-tree="$dir" --git-dir="$dir/.git" "$@"
+      echo ""
+    fi
+  done
+}
+export -f gitkin
+alias catgit=gitkin

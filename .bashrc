@@ -93,3 +93,4 @@ export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages"
 echo "ROS Master is $ROS_MASTER_URI"
 
 ulimit -c unlimited
+source '/home/evenator/code/dsat_hydro/setup.bash'
