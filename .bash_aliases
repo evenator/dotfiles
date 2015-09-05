@@ -41,7 +41,9 @@ open(){
 if [ $# -lt 1 ]; then
   gnome-open . 1>/dev/null 2>/dev/null
 else
-  gnome-open "$@" 1>/dev/null 2>/dev/null
+  for FILE in $@; do
+    gnome-open "$FILE" 1>/dev/null 2>/dev/null
+  done
 fi
 }
 export -f open
@@ -100,7 +102,7 @@ swri_rosmake(){
     fi
   elif [[ $special_args =~ "--eclipse" ]]; then
     if [[ $special_args =~ "-a" ]]; then
-      echo "Making all eclipse projects..."
+      echo "Making all eclipse projects..."threaded_segment_localizer
       package_paths=`rospack list | cut -d" " -f2`
     else
       echo "Making specified eclipse projects..."
@@ -132,11 +134,66 @@ rosgit(){
     if [ -d "$dir/.git" ] && 
         git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
       echo `basename "$dir"`
+      echo "========"
+      echo ""
       git --work-tree="$dir" --git-dir="$dir/.git" "$@"
-      echo "---"
+      echo ""
     fi
   done
 }
+export -f rosgit
+
+repodo(){
+  for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
+  do
+    if [ -d "$dir/.git" ] && 
+        git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+      echo `basename "$dir"`
+      echo "========"
+      echo ""
+      (cd $dir; bash -c "$@")
+      echo ""
+    fi
+  done
+}
+export -f repodo
+
+my_rosws(){
+  case "$1" in
+    cd)
+      shift
+      LOCALNAME=$(rosws info --only=localname | awk "/$1/{print length, \$0}" | sort -n -s | cut -d' ' -f2- | head -1)
+      echo $LOCALNAME
+      cd `rosws info --only=path $LOCALNAME`
+      ;;
+    checkout)
+      shift
+        for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
+        do
+          if [ -d "$dir/.git" ] && 
+              git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+            echo `basename "$dir"`
+            git --work-tree="$dir" --git-dir="$dir/.git" fetch
+            if [ -n "$(git --work-tree="$dir" --git-dir="$dir/.git" branch --list -a | awk -F'[ /]' '{print $NF'} | grep "^$1\$")" ]
+              then
+                rosws set $dir -y -v $1 >/dev/null 2>/dev/null
+                git --work-tree="$dir" --git-dir="$dir/.git" checkout "$1"
+                echo "Changed to branch $1"
+                git --work-tree="$dir" --git-dir="$dir/.git" merge --ff-only origin/$1
+              else
+                echo "Branch $1 does not exist"
+            fi
+            echo "---"
+          fi
+        done
+      ;;
+    *)
+      rosws "$@"
+      ;;
+  esac
+}
+export -f my_rosws
+alias rosws='my_rosws'
 
 my_rosws(){
   case "$1" in
@@ -178,25 +235,11 @@ alias launchgrep="grep -r --include='*.launch' --include='*.xml'"
 alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
 alias msggrep="grep -r --include='*.msg' --include='*.srv'"
 
-alias rosfind='find $ROS_WORKSPACE'
+alias rosfind='find $(roscd && pwd)'
 
 alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
 
-alias rosdep='rosdep --os="ubuntu:precise"'
-
-alias pulldocs='rsync -vaz 'boomer:/home/evenator/Documents/' /home/evenator/Documents'
-alias pushdocs='rsync -vaz /home/evenator/Documents/ boomer:/home/evenator/Documents/'
-alias mergedocs='pushdocs && pulldocs'
 alias bashrc='source ~/.bashrc'
-
-set_ff()
-{
-  rosparam set /vehicle_interface/low_level_controller/gasbrake_control/drive/feedforward_b $1
-  rosservice call /vehicle_interface/low_level_controller/reconfigure "{}"
-}
-export -f set_ff
-
-alias get_ff="rosparam get /vehicle_interface/low_level_controller/gasbrake_control/drive/feedforward_b"
 
 pandoc-pdf(){
   PDF_FILE=`expr "${@: -1}" : '\(.*\.\)'`"pdf"
@@ -218,3 +261,40 @@ alias ssh_proxy='ssh -f -N -D 1080 boomer.dyn.datasys.swri.edu'
 
 alias speed_hud='rxplot /localization/near_field_odom/twist/twist/linear/x,/vehicle_interface/speed_setpoint/speed /localization/gps/speed,/localization/near_field_odom/twist/twist/linear/x /can/mototron_odometry/speed'
 alias encoder_hud='rxplot /localization/semi_unified_localization_node/can_odom_elems/v_rear_driver,/localization/semi_unified_localization_node/can_odom_elems/v_rear_passenger /localization/semi_unified_localization_node/can_odom_elems/v_rear_driver /localization/semi_unified_localization_node/can_odom_elems/v_rear_passenger'
+
+qotd(){
+ curl -s http://bash.org/?random1|grep -oE "<p class=\"quote\">.*</p>.*</p>"|grep -oE "<p class=\"qt.*?</p>"|sed -e 's/<\/p>/\n/g' -e 's/<p class=\"qt\">//g' -e 's/<p class=\"qt\">//g'|perl -ne 'use HTML::Entities;print decode_entities($_),"\n"' | head -n1
+}
+export -f qotd
+
+alias rosdep='rosdep --os=ubuntu:precise'
+
+extended_catkin(){
+  if [ $1 = 'cd' ]; then
+    pkg_path=$(catkin locate "$2")
+    if [ -n $pkg_path ]; then cd "$pkg_path"; fi
+  else
+    catkin "$@"
+  fi
+}
+alias catkin='extended_catkin'
+
+#TODO: Make this work recursively up the directory tree to the git root
+#
+alias rsync_git='rsync --exclude=".git" --filter=":- .gitignore"'
+
+gitkin(){
+  for dir in `wstool info --only=path  | sed 's/\:/ /g'`
+  do
+    if [ -d "$dir/.git" ] && 
+        git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+      echo `basename "$dir"`
+      echo "========"
+      echo ""
+      git --work-tree="$dir" --git-dir="$dir/.git" "$@"
+      echo ""
+    fi
+  done
+}
+export -f gitkin
+alias catgit=gitkin

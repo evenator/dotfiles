@@ -1,14 +1,3 @@
-#! /bin/bash 
-WS=`wmctrl -d | grep "*" -n -o`
-if [ "${WS}" = "1:*" ]; then
-    source ~/code/dsat/setup.bash &&
-    echo "Working in DSAT Workspace"
-elif [ "${WS}" = "2:*" ]; then
-    echo "Working in Android Workspace"
-elif [ "${WS}" = "4:*" ]; then
-    source ~/code/honda_localization/setup.bash &&
-    echo "Honda Localization Workspace"
-else
-    source /opt/ros/fuerte/setup.bash &&
-    echo "No Workspace (fuerte)"
-fi
+#! /bin/bash
+#. ~/code/amas/setup.bash
+. ~/code/dsat/devel/setup.bash

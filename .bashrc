@@ -105,6 +105,7 @@ export ROS_MASTER_URI="http://$ROS_IP:11311"
 #export ROS_MASTER_URI="http://192.168.70.100:11311"  # Acura 1
 #export ROS_MASTER_URI="http://am1:11311"  # AMAS MTV
 #export ROS_MASTER_URI="http://marti-zotac:11311"
-ulimit -c 0 #unlimited
+#ulimit -c 0 #unlimited
 
 echo "ROS Master is $ROS_MASTER_URI"
+echo "ROS Workspace is $(roscd && pwd)"
