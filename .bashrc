@@ -49,7 +49,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-unset color_prompt force_color_prompt
+#unset color_prompt force_color_prompt
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -68,7 +68,7 @@ export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
 source ~/.keys.sh
 
 # Set up workspace
-source ~/code/dsat/setup.bash
+source ~/.workspace
 
 # Alias definitions. These go after the workspace setup script
 if [ -f ~/.bash_aliases ]; then
@@ -81,11 +81,21 @@ export GIT_EDITOR=$EDITOR
 
 # ROS Stuff
 export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
-export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
-export ROS_HOSTNAME=`hostname`
+export ROS_IP=$(ip addr show eth0 | grep -oP "(?<=inet )[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*")
+if [ -z "$ROS_IP" ]
+  then 
+  export ROS_IP=$(ip addr show wlan0 | grep -oP "(?<=inet )[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*")
+fi
+if [ -z "$ROS_IP" ]
+  then 
+  export ROS_IP="127.0.0.1"
+fi
+#export ROS_HOSTNAME=`hostname`
 export ROSLAUNCH_SSH_UNKNOWN=1
 
-export ROS_MASTER_URI="http://localhost:11311"
+#export ROS_MASTER_URI="http://localhost:11311"
+export ROS_MASTER_URI="http://$ROS_IP:11311"
+#export ROS_MASTER_URI="http://192.168.10.100:11311"  # Marti 1
 #export ROS_MASTER_URI="http://mrzr-8801:11311"
 #export ROS_MASTER_URI="http://mrzr-8789:11311"
 #export ROS_MASTER_URI="http://mrzr-8787:11311"
@@ -93,6 +103,8 @@ export ROS_MASTER_URI="http://localhost:11311"
 #export ROS_MASTER_URI="http://rubicon-c11:11311"
 #export ROS_MASTER_URI="http://rubicon-c12:11311"
 #export ROS_MASTER_URI="http://192.168.70.100:11311"  # Acura 1
-ulimit -c unlimited
+#export ROS_MASTER_URI="http://am1:11311"  # AMAS MTV
+#export ROS_MASTER_URI="http://marti-zotac:11311"
+ulimit -c 0 #unlimited
 
 echo "ROS Master is $ROS_MASTER_URI"

@@ -41,7 +41,7 @@ open(){
 if [ $# -lt 1 ]; then
   gnome-open . 1>/dev/null 2>/dev/null
 else
-  gnome-open "$1" 1>/dev/null 2>/dev/null
+  gnome-open "$@" 1>/dev/null 2>/dev/null
 fi
 }
 export -f open
@@ -205,6 +205,7 @@ pandoc-pdf(){
 export -f pandoc-pdf
 
 vpn(){
+  echo -ne "\033]0;VPN\007"
   snx
   echo "VPN connected"
   echo "Press Ctrl+C to disconnect"
