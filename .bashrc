@@ -59,16 +59,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Prompt
-source ~/.bash_prompt
+if [ -f ~/.bash_prompt ]; then
+  source ~/.bash_prompt
+fi
 
 # Path
 export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
 
-#For Gitlab access
-source ~/.keys.sh
-
 # Set up workspace
-source ~/.workspace
+if [ -f ~/.workspace ]; then
+  source ~/.workspace
+fi
 
 # Alias definitions. These go after the workspace setup script
 if [ -f ~/.bash_aliases ]; then
@@ -91,6 +92,6 @@ export ROS_MASTER_URI="http://localhost:11311"
 export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages"
 
 echo "ROS Master is $ROS_MASTER_URI"
+echo "ROS Workspace is $(roscd && pwd)"
 
 ulimit -c unlimited
-source '/home/evenator/code/dsat_hydro/setup.bash'
