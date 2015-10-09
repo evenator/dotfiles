@@ -1,11 +1,6 @@
 #! /bin/bash 
-WS=`wmctrl -d | grep "*" -n -o`
-if [ "${WS}" = "1:*" ]; then
-    source ~/code/dsat/setup.bash &&
-    echo "Working in DSAT Workspace"
-elif [ "${WS}" = "2:*" ]; then
-    echo "Working in Android Workspace"
-else
-    source /opt/ros/fuerte/setup.bash &&
-    echo "No Workspace (fuerte)"
-fi
+
+#ROS_WORKSPACE=~/code/fancy_top_hat
+#source ~/code/dsat/setup.bash
+#source ~/code/amas/setup.bash
+source ~/code/dsat_catkin/devel/setup.bash

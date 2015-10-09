@@ -1,8 +1,18 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# Path
+export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
+export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages:$HOME/ivs_conf/python"
 
-# If not running interactively, don't do anything
+# Alias definitions
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Set up workspace
+if [ -f ~/.workspace ]; then
+    source ~/.workspace
+fi
+
+# If not running interactively, stop here
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -60,38 +70,51 @@ fi
 
 # Prompt
 if [ -f ~/.bash_prompt ]; then
-  source ~/.bash_prompt
+    source ~/.bash_prompt
 fi
 
-# Path
-export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
-
-# Set up workspace
-if [ -f ~/.workspace ]; then
-  source ~/.workspace
-fi
-
-# Alias definitions. These go after the workspace setup script
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+# Color GCC and ccache
+#export PATH=/usr/lib/colorgcc/bin:$PATH  # Disabled because g++ is going to gcc for some reason
+export CCACHE_PATH="/usr/bin"  # So ccache doesn't recursively invoke colorgcc
+# export CGCC_FORCE_COLOR=yes  # Should force color output, even to pipe
 
 # Editor settings
-EDITOR=vim
-GIT_EDITOR=$EDITOR
+export EDITOR=vim
+export GIT_EDITOR=$EDITOR
 
 # ROS Stuff
 export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
-export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
-export ROS_HOSTNAME=`hostname`
-export ROSLAUNCH_SSH_UNKNOWN=1
 
-#export ROS_MASTER_URI="http://rubicon-c11-vision:11311"
+#export ROS_MASTER_URI="http://rubicon-c11:11311"
+#export ROS_MASTER_URI="http://mrzr-8789:11311"
 export ROS_MASTER_URI="http://localhost:11311"
 
-export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages"
+export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+export ROS_HOSTNAME=boomer.dyn.datasys.swri.edu
+export ROSLAUNCH_SSH_UNKNOWN=1
 
-echo "ROS Master is $ROS_MASTER_URI"
-echo "ROS Workspace is $(roscd && pwd)"
+echo "ROS IP:        $ROS_IP"
+echo "ROS Hostname:  $ROS_HOSTNAME"
+echo "ROS Workspace: $(roscd && pwd)"
+echo "ROS Master:    $ROS_MASTER_URI"
 
-ulimit -c unlimited
+SSH_ENV=$HOME/.ssh/environment
+   
+# start the ssh-agent
+function start_agent {
+    echo "Initializing new SSH agent..."
+    # spawn ssh-agent
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add
+}
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+      start_agent;
+    }
+else
+    start_agent;
+fi
