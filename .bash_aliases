@@ -270,12 +270,20 @@ export -f qotd
 alias rosdep='rosdep --os=ubuntu:precise'
 
 extended_catkin(){
-  if [ $1 = 'cd' ]; then
-    pkg_path=$(catkin locate "$2")
-    if [ -n $pkg_path ]; then cd "$pkg_path"; fi
-  else
-    catkin "$@"
-  fi
+   if [ $1 = 'cd' ]; then
+     pkg="$(echo $2 | cut -d '/' -f 1)"
+     sub_path="$(echo $2 | cut -d '/' -s -f 2- --output-delimiter='/')"
+     pkg_path=$(catkin locate "$pkg")
+     if [ -n $pkg_path ]; then cd "$pkg_path/$sub_path"; fi
+   elif [ $1 = 'test' ]; then
+     shift
+     catkin build "$@" --catkin-make-args run_tests
+   elif [ $1 = 'eclipse' ]; then
+     shift
+     catkin build "$@" && for pkg in $@; do catkin build $pkg --force-cmake --no-deps --cmake-args -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT=TRUE $(catkin locate $pkg); done;
+   else
+     catkin "$@"
+   fi
 }
 alias catkin='extended_catkin'
 
