@@ -253,12 +253,21 @@ alias cat='special_cat'
 fi
 
 extended_catkin(){
-  if [ $1 = 'cd' ]; then
-    pkg_path=$(catkin locate "$2")
-    if [ -n $pkg_path ]; then cd "$pkg_path"; fi
-  else
-    catkin "$@"
-  fi
+   if [ $1 = 'cd' ]; then
+     if [ -z "$2" ]; then echo -e 1>&2 "\e[31mERROR: You must specify a catkin package name\e[0m"; return 1; fi
+     pkg="$(echo $2 | cut -d '/' -f 1)"
+     sub_path="$(echo $2 | cut -d '/' -s -f 2- --output-delimiter='/')"
+     pkg_path=$(catkin locate "$pkg")
+     if [ -n "$pkg_path" ]; then cd "$pkg_path/$sub_path"; fi
+   elif [ $1 = 'test' ]; then
+     shift
+     catkin build "$@" --catkin-make-args run_tests
+   elif [ $1 = 'eclipse' ]; then
+     shift
+     for pkg in $@; do (extended_catkin cd $pkg && cmake -G"Eclipse CDT4 - Unix Makefiles" && rm -rf catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile;) done
+   else
+     catkin "$@"
+   fi
 }
 alias catkin='extended_catkin'
 
