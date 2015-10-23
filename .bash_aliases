@@ -193,7 +193,7 @@ my_rosws(){
   esac
 }
 export -f my_rosws
-alias rosws='my_rosws'
+#alias rosws='my_rosws'
 
 my_rosws(){
   case "$1" in
@@ -271,16 +271,17 @@ alias rosdep='rosdep --os=ubuntu:precise'
 
 extended_catkin(){
    if [ $1 = 'cd' ]; then
+     if [ -z "$2" ]; then echo -e 1>&2 "\e[31mERROR: You must specify a catkin package name\e[0m"; return 1; fi
      pkg="$(echo $2 | cut -d '/' -f 1)"
      sub_path="$(echo $2 | cut -d '/' -s -f 2- --output-delimiter='/')"
      pkg_path=$(catkin locate "$pkg")
-     if [ -n $pkg_path ]; then cd "$pkg_path/$sub_path"; fi
+     if [ -n "$pkg_path" ]; then cd "$pkg_path/$sub_path"; fi
    elif [ $1 = 'test' ]; then
      shift
      catkin build "$@" --catkin-make-args run_tests
    elif [ $1 = 'eclipse' ]; then
      shift
-     catkin build "$@" && for pkg in $@; do catkin build $pkg --force-cmake --no-deps --cmake-args -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT=TRUE $(catkin locate $pkg); done;
+     for pkg in $@; do (extended_catkin cd $pkg && cmake -G"Eclipse CDT4 - Unix Makefiles" && rm -rf catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile;) done
    else
      catkin "$@"
    fi
@@ -306,3 +307,5 @@ gitkin(){
 }
 export -f gitkin
 alias catgit=gitkin
+
+alias copy_amas_logs='rsync -avz amas@am1:/home/amas/.ros/log/ ~/Desktop/amas_bags/log'
