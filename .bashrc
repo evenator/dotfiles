@@ -93,8 +93,8 @@ fi
 #export ROS_HOSTNAME=`hostname`
 export ROSLAUNCH_SSH_UNKNOWN=1
 
-#export ROS_MASTER_URI="http://localhost:11311"
-export ROS_MASTER_URI="http://$ROS_IP:11311"
+export ROS_MASTER_URI="http://localhost:11311"
+#export ROS_MASTER_URI="http://$ROS_IP:11311"
 #export ROS_MASTER_URI="http://192.168.10.100:11311"  # Marti 1
 #export ROS_MASTER_URI="http://mrzr-8801:11311"
 #export ROS_MASTER_URI="http://mrzr-8789:11311"
