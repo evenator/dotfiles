@@ -189,7 +189,7 @@ convert_stamp(){
 }
 export -f convert_stamp
 
-alias launchgrep="grep -r --include='*.launch' --include='*.xml'"
+alias launchgrep="grep -r --include='*.launch' --include='*.xml' --exclude='manifest.xml' --exclude='package.xml'"
 alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
 alias msggrep="grep -r --include='*.msg' --include='*.srv'"
 
@@ -264,7 +264,8 @@ extended_catkin(){
      catkin build "$@" --catkin-make-args run_tests
    elif [ $1 = 'eclipse' ]; then
      shift
-     for pkg in $@; do (extended_catkin cd $pkg && cmake -G"Eclipse CDT4 - Unix Makefiles" && rm -rf catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile;) done
+    if [ $# -lt "1" ]; then pkgs=$(catkin list -u); else pkgs="$@"; fi;
+    parallel -I{} bash -lc 'extended_catkin cd {} && (cmake -G"Eclipse CDT4 - Unix Makefiles"; git clean -fx -- cmake catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile)' -- $pkgs
    else
      catkin "$@"
    fi
@@ -290,3 +291,15 @@ gitkin(){
 }
 export -f gitkin
 alias catgit=gitkin
+
+try_git_rm(){
+  err=$(git rm "$@" 3>&1 2>&3) 
+  code=$?
+  if [ $code == 128 ]; then
+    command rm "$@"
+  elif [ $code -gt 0 ]; then
+    echo "$err" 1>&2
+  fi
+}
+alias rm='try_git_rm'
+
