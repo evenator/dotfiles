@@ -26,28 +26,21 @@ alias quit='exit'
 # Less with color and line numbers
 alias less='less -NR'
 
-# Add an "open" command to open a file using the file browser (caja or nautilus)
+# Add an "open" command to open a file using the file browser
 # Apparently the OSX terminal can do this. It's handy.
 # Usage:
-#   open                # Opens the current directory
-#   open [file [file] ] # Open the file(s) or directories in the browser
-if [ -n "`which caja`" ]; then
-  open(){
-    if [ $# -lt 1 ]; then
-      caja . 1>/dev/null 2>/dev/null &
-    else
-      caja "$1" 1>/dev/null 2>/dev/null &
-    fi
-  }
+#   open       # Opens the current directory
+#   open file  # Open the file or directory in the browser
+# Add an "open" command to open a file using the file browser
+open(){
+if [ $# -lt 1 ]; then
+  gnome-open . 1>/dev/null 2>/dev/null
 else
-  open(){
-    if [ $# -lt 1 ]; then
-      nautilus . 1>/dev/null 2>/dev/null &
-    else
-      nautilus "$1" 1>/dev/null 2>/dev/null &
-    fi
-  }
+  for FILE in $@; do
+    gnome-open "$FILE" 1>/dev/null 2>/dev/null
+  done
 fi
+}
 export -f open
 
 # Add an "alert" alias for long running commands.  Use like so:
