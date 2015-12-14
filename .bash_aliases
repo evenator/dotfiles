@@ -23,6 +23,20 @@ alias l='ls -CF'
 # Cuz why not
 alias quit='exit'
 
+alias launchgrep="grep -r --include='*.launch' --include='*.xml' --exclude='manifest.xml' --exclude='package.xml'"
+
+alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
+
+alias msggrep="grep -r --include='*.msg' --include='*.srv'"
+
+alias rosfind='find $ROS_WORKSPACE'
+
+alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
+
+alias rosdep='rosdep --os="ubuntu:trusty"'
+
+alias bashrc='source ~/.bashrc'
+
 # Less with color and line numbers
 alias less='less -NR'
 
