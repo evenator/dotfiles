@@ -1,5 +1,5 @@
 # Bash aliases file
-# Author: Ed Venator (evenator@swri.org)
+# Author: Ed Venator (evenator@gmail.com)
 
 unalias -a
 
@@ -94,52 +94,3 @@ swri_rostopic() {
 export -f swri_rostopic
 alias rostopic='swri_rostopic'
 
-swri_rosmake(){
-  special_args=`getopt -q -l "retry eclipse" -o "asr" -- $@`
-  echo $special_args
-  if [[ $special_args =~ "--retry" ]]; then
-    file=`find ~/.ros/rosmake/ -iname buildfailures.txt -printf "%C@ %p\n" |
-      sort -rn |
-      head -n 1 |
-      cut -d" " -f2`
-    echo "Retrying packages listed in $file"
-    packages="`tail -n+2 $file`"
-    opts=`sed 's/--retry//' <<<$special_args`
-    if [[ -n $packages ]]; then
-      echo $opts $packages | xargs -t rosmake
-    else
-      echo "Nothing to build"
-    fi
-  elif [[ $special_args =~ "--eclipse" ]]; then
-    if [[ $special_args =~ "-a" ]]; then
-      echo "Making all eclipse projects..."
-      packages=`rospack list`
-    else
-      echo "Making specified eclipse projects..."
-      packages=`gawk -F" -- " '{print $2}' <<<$special_args`
-    fi
-    for package in $packages; do
-      make -C `rospack find $package` eclipse-project
-    done
-  else
-    rosmake $@
-  fi
-}
-export -f swri_rosmake
-alias rosmake='swri_rosmake'
-
-rosgit(){
-  for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
-  do
-    if [ -d "$dir/.git" ] && 
-        git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
-      echo `basename "$dir"`
-      git --work-tree="$dir" --git-dir="$dir/.git" $@
-      echo "---"
-    fi
-  done
-}
-
-alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
-
-alias rosdep='rosdep --os="ubuntu:precise"'
