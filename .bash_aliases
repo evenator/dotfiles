@@ -215,23 +215,24 @@ export -f qotd
 alias rosdep='rosdep --os=ubuntu:trusty'
 
 catking(){
-   if [ $1 = 'cd' ]; then
+   if [ "$1" = 'cd' ]; then
      if [ -z "$2" ]; then echo -e 1>&2 "\e[31mERROR: You must specify a catkin package name\e[0m"; return 1; fi
      pkg="$(echo $2 | cut -d '/' -f 1)"
      sub_path="$(echo $2 | cut -d '/' -s -f 2- --output-delimiter='/')"
      pkg_path=$(catkin locate "$pkg")
      if [ -n "$pkg_path" ]; then cd "$pkg_path/$sub_path"; fi
-   elif [ $1 = 'test' ]; then
+   elif [ "$1" = 'test' ]; then
      shift
      catkin build "$@" --catkin-make-args run_tests
-   elif [ $1 = 'eclipse' ]; then
+   elif [ "$1" = 'eclipse' ]; then
      shift
-    if [ $# -lt "1" ]; then pkgs=$(catkin list -u); else pkgs="$@"; fi;
-    parallel -I{} bash -lc 'extended_catkin cd {} && (cmake -G"Eclipse CDT4 - Unix Makefiles"; git clean -fx -- cmake catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile)' -- $pkgs
+     if [ $# -lt "1" ]; then pkgs=$(catkin list -u); else pkgs="$@"; fi;
+     parallel -I{} 'catking cd {} && (cmake -G"Eclipse CDT4 - Unix Makefiles"; git clean -fx -- .settings cmake catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile)' ::: $pkgs
    else
      catkin "$@"
    fi
 }
+export -f catking
 
 #TODO: Make this work recursively up the directory tree to the git root
 #
