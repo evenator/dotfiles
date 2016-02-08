@@ -102,7 +102,7 @@ swri_rosmake(){
     fi
   elif [[ $special_args =~ "--eclipse" ]]; then
     if [[ $special_args =~ "-a" ]]; then
-      echo "Making all eclipse projects..."threaded_segment_localizer
+      echo "Making all eclipse projects..."
       package_paths=`rospack list | cut -d" " -f2`
     else
       echo "Making specified eclipse projects..."
@@ -116,17 +116,6 @@ swri_rosmake(){
 }
 export -f swri_rosmake
 alias rosmake='swri_rosmake'
-
-rosrepodo(){
-  for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
-  do
-     if [ -d "$dir/.git" ] &&
-         git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
-       echo "cd $dir;" $@
-       eval "cd $dir;" $@
-     fi
-  done
-}
 
 rosgit(){
   for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
@@ -195,49 +184,20 @@ my_rosws(){
 export -f my_rosws
 #alias rosws='my_rosws'
 
-my_rosws(){
-  case "$1" in
-    checkout)
-      shift
-        for dir in `rosws info --pkg-path-only  | sed 's/\:/ /g'`
-        do
-          if [ -d "$dir/.git" ] && 
-              git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
-            echo `basename "$dir"`
-            git --work-tree="$dir" --git-dir="$dir/.git" fetch
-            if [ -n "$(git --work-tree="$dir" --git-dir="$dir/.git" branch --list -a | awk -F'[ /]' '{print $NF'} | grep "^$1\$")" ]
-              then
-                rosws set $dir -y -v $1 >/dev/null 2>/dev/null
-                git --work-tree="$dir" --git-dir="$dir/.git" checkout "$1"
-                echo "Changed to branch $1"
-                git --work-tree="$dir" --git-dir="$dir/.git" merge --ff-only origin/$1
-              else
-                echo "Branch $1 does not exist"
-            fi
-            echo "---"
-          fi
-        done
-      ;;
-    *)
-      rosws "$@"
-      ;;
-  esac
-}
-export -f my_rosws
-alias rosws='my_rosws'
-
 convert_stamp(){
   date -d@$1
 }
 export -f convert_stamp
 
-alias launchgrep="grep -r --include='*.launch' --include='*.xml'"
+alias launchgrep="grep -r --include='*.launch' --include='*.xml' --exclude='manifest.xml' --exclude='package.xml'"
 alias cppgrep="grep -r --include='*.cpp' --include='*.h' --include='*.hpp'"
 alias msggrep="grep -r --include='*.msg' --include='*.srv'"
 
-alias rosfind='find $(roscd && pwd)'
+alias rosfind='find $ROS_WORKSPACE'
 
 alias lsnodes='ps aux | grep "ros" | grep -v grep | awk -F" " \"/python/{print $12; next}{print $11}\" | sort'
+
+alias rosdep='rosdep --os="ubuntu:precise"'
 
 alias bashrc='source ~/.bashrc'
 
@@ -247,29 +207,14 @@ pandoc-pdf(){
 }
 export -f pandoc-pdf
 
-vpn(){
-  echo -ne "\033]0;VPN\007"
-  snx
-  echo "VPN connected"
-  echo "Press Ctrl+C to disconnect"
-  ssh -N -D 1080 boomer 2>/dev/null
-  echo "SSH proxy disconnected"
-  snx -d 1>/dev/null 2>/dev/null
-  echo "VPN disconnected"
-}
-alias ssh_proxy='ssh -f -N -D 1080 boomer.dyn.datasys.swri.edu'
-
-alias speed_hud='rxplot /localization/near_field_odom/twist/twist/linear/x,/vehicle_interface/speed_setpoint/speed /localization/gps/speed,/localization/near_field_odom/twist/twist/linear/x /can/mototron_odometry/speed'
-alias encoder_hud='rxplot /localization/semi_unified_localization_node/can_odom_elems/v_rear_driver,/localization/semi_unified_localization_node/can_odom_elems/v_rear_passenger /localization/semi_unified_localization_node/can_odom_elems/v_rear_driver /localization/semi_unified_localization_node/can_odom_elems/v_rear_passenger'
-
 qotd(){
  curl -s http://bash.org/?random1|grep -oE "<p class=\"quote\">.*</p>.*</p>"|grep -oE "<p class=\"qt.*?</p>"|sed -e 's/<\/p>/\n/g' -e 's/<p class=\"qt\">//g' -e 's/<p class=\"qt\">//g'|perl -ne 'use HTML::Entities;print decode_entities($_),"\n"' | head -n1
 }
 export -f qotd
 
-alias rosdep='rosdep --os=ubuntu:precise'
+alias rosdep='rosdep --os=ubuntu:trusty'
 
-extended_catkin(){
+catking(){
    if [ $1 = 'cd' ]; then
      if [ -z "$2" ]; then echo -e 1>&2 "\e[31mERROR: You must specify a catkin package name\e[0m"; return 1; fi
      pkg="$(echo $2 | cut -d '/' -f 1)"
@@ -281,12 +226,12 @@ extended_catkin(){
      catkin build "$@" --catkin-make-args run_tests
    elif [ $1 = 'eclipse' ]; then
      shift
-     for pkg in $@; do (extended_catkin cd $pkg && cmake -G"Eclipse CDT4 - Unix Makefiles" && rm -rf catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile;) done
+    if [ $# -lt "1" ]; then pkgs=$(catkin list -u); else pkgs="$@"; fi;
+    parallel -I{} bash -lc 'extended_catkin cd {} && (cmake -G"Eclipse CDT4 - Unix Makefiles"; git clean -fx -- cmake catkin catkin_generated CMakeFiles devel gtest test_results CMakeCache.txt cmake_install.cmake CTestTestfile.cmake Makefile)' -- $pkgs
    else
      catkin "$@"
    fi
 }
-alias catkin='extended_catkin'
 
 #TODO: Make this work recursively up the directory tree to the git root
 #
@@ -309,3 +254,14 @@ export -f gitkin
 alias catgit=gitkin
 
 alias copy_amas_logs='rsync -avz amas@am1:/home/amas/.ros/log/ ~/Desktop/amas_bags/log'
+
+try_git_rm(){
+  err=$(git rm "$@" 3>&1 2>&3) 
+  code=$?
+  if [ $code == 128 ]; then
+    command rm "$@"
+  elif [ $code -gt 0 ]; then
+    echo "$err" 1>&2
+  fi
+}
+alias rm='try_git_rm'
