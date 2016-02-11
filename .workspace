@@ -1,6 +1,8 @@
 #! /bin/bash 
 
 #ROS_WORKSPACE=~/code/fancy_top_hat
-#source ~/code/dsat/setup.bash
-#source ~/code/amas/setup.bash
-source ~/code/dsat_catkin/devel/setup.bash
+#source ~/code/amas/devel/setup.bash
+#source ~/code/dsat_catkin/devel/setup.bash
+#source ~/code/joe/devel/setup.bash
+source ~/code/fantastic_workspace/devel/setup.bash
+
