@@ -89,7 +89,10 @@ export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
 #export ROS_MASTER_URI="http://mrzr-8789:11311"
 export ROS_MASTER_URI="http://localhost:11311"
 
-export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+export ROS_IP=$(ip addr show ppp0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+if [ -z ROS_IP ]; then
+  export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+fi
 export ROS_HOSTNAME=boomer.dyn.datasys.swri.edu
 export ROSLAUNCH_SSH_UNKNOWN=1
 
