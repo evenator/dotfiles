@@ -91,7 +91,10 @@ export ROS_MASTER_URI="http://localhost:11311"
 
 export ROS_IP=$(ip addr show ppp0 2>/dev/null | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 if [ -z "$ROS_IP" ]; then
-  export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+  export ROS_IP=$(ip addr show eth0 2>/dev/null | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
+fi
+if [ -z "$ROS_IP" ]; then
+  export ROS_IP=$(ip addr show eth1 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 fi
 export ROS_HOSTNAME=boomer.dyn.datasys.swri.edu
 export ROSLAUNCH_SSH_UNKNOWN=1
