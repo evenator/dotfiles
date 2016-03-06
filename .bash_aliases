@@ -266,3 +266,15 @@ try_git_rm(){
   fi
 }
 alias rm='try_git_rm'
+
+vpn(){
+  echo -ne "\033]0;VPN\007"
+  snx
+  echo "VPN connected"
+  echo "Press Ctrl+C to disconnect"
+  ssh -N -D 1080 boomer 2>/dev/null
+  echo "SSH proxy disconnected"
+  snx -d 1>/dev/null 2>/dev/null
+  echo "VPN disconnected"
+}
+alias ssh_proxy='ssh -f -N -D 1080 boomer.dyn.datasys.swri.edu'
