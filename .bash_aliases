@@ -290,6 +290,19 @@ gitkin(){
 export -f gitkin
 alias catgit=gitkin
 
+porcelain_gitkin(){
+  for dir in `wstool info --only=path  | sed 's/\:/ /g'`
+  do
+    if [ -d "$dir/.git" ] && 
+        git --work-tree="$dir" --git-dir="$dir/.git" remote -v | grep "datasys.swri.edu" -q ; then
+      echo ""
+      git --work-tree="$dir" --git-dir="$dir/.git" "$@"
+      echo ""
+    fi
+  done
+}
+export -f porcelain_gitkin
+
 try_git_rm(){
   err=$(git rm "$@" 3>&1 2>&3) 
   code=$?
