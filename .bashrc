@@ -1,8 +1,20 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# Path
+if [[ $PATH != *"$HOME/scripts"* ]]; then
+  export PATH="$HOME/scripts:$PATH"
+fi
+export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages:$HOME/ivs_conf/python"
 
-# If not running interactively, don't do anything
+# Alias definitions
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Set up workspace
+if [ -f ~/.workspace ]; then
+    source ~/.workspace
+fi
+
+# If not running interactively, stop here
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -66,9 +78,13 @@ fi
 # Path
 export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
 
-#For Gitlab access
-if [ -f ~/.keys.sh ]; then 
-  source ~/.keys.sh
+# DistCC Color GCC and ccache
+#export PATH=/usr/lib/colorgcc/bin:$PATH  # Disabled because g++ is going to gcc for some reason
+#export CGCC_FORCE_COLOR=yes  # Should force color output, even to pipe
+export CCACHE_PREFIX="distcc"
+
+if [[ $PATH != *"/usr/lib/distcc"* ]]; then
+    export PATH="/usr/lib/ccache:/usr/lib/distcc:$PATH"
 fi
 
 # Set up workspace
