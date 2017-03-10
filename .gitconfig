@@ -5,6 +5,7 @@
 	email = evenator@swri.org
 [alias]
   mdchangelog = log --no-merges --reverse --date='short' --pretty=tformat:'* %s -- [%aN](mailto:%aE) %ad (%h)'
+  verbosemdchangelog = log --no-merges --reverse --date='short' --pretty=tformat:'!!!! %s -- [%aN](mailto:%aE) %ad (%h)\n\n%b'
   textilechangelog = log --no-merges --reverse --date='short' --pretty=tformat:'* %s -- \"%aN\":mailto:%aE %ad (%h)'
   prettylog = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n%b' --abbrev-commit
   graphlog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
