@@ -1,5 +1,7 @@
 # Path
-export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
+if [[ $PATH != *"$HOME/scripts"* ]]; then
+  export PATH="$HOME/scripts:$PATH"
+fi
 export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages:$HOME/ivs_conf/python"
 
 # Alias definitions
@@ -73,10 +75,14 @@ if [ -f ~/.bash_prompt ]; then
     source ~/.bash_prompt
 fi
 
-# Color GCC and ccache
+# DistCC Color GCC and ccache
 #export PATH=/usr/lib/colorgcc/bin:$PATH  # Disabled because g++ is going to gcc for some reason
-export CCACHE_PATH="/usr/bin"  # So ccache doesn't recursively invoke colorgcc
-# export CGCC_FORCE_COLOR=yes  # Should force color output, even to pipe
+#export CGCC_FORCE_COLOR=yes  # Should force color output, even to pipe
+export CCACHE_PREFIX="distcc"
+
+if [[ $PATH != *"/usr/lib/distcc"* ]]; then
+    export PATH="/usr/lib/ccache:/usr/lib/distcc:$PATH"
+fi
 
 # Editor settings
 export EDITOR=vim
