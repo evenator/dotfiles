@@ -315,3 +315,5 @@ try_git_rm(){
 alias rm='try_git_rm'
 
 alias serveme='python -m SimpleHTTPServer'
+
+alias remove_trailing_space="sed -i 's/[[:space:]]*\$//'"
