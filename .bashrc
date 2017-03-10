@@ -120,16 +120,28 @@ export ROSLAUNCH_SSH_UNKNOWN=1
 export ROS_MASTER_URI="http://localhost:11311"
 #export ROS_MASTER_URI="http://$ROS_IP:11311"
 #export ROS_MASTER_URI="http://192.168.10.100:11311"  # Marti 1
-#export ROS_MASTER_URI="http://mrzr-8801:11311"
-#export ROS_MASTER_URI="http://mrzr-8789:11311"
-#export ROS_MASTER_URI="http://mrzr-8787:11311"
+#export ROS_MASTER_URI="http://192.168.20.100:11311"  # DSAT HMMWV
+#export ROS_MASTER_URI="http://swri-1165:11311"  # SWRI 1165
+#export ROS_MASTER_URI="http://am1:11312"  # AMAS MTV
 #export ROS_MASTER_URI="http://dsat-hmmwv:11311"
-#export ROS_MASTER_URI="http://rubicon-c11:11311"
-export ROS_MASTER_URI="http://rubicon-c12:11311"
-#export ROS_MASTER_URI="http://192.168.70.100:11311"  # Acura 1
-#export ROS_MASTER_URI="http://am1:11311"  # AMAS MTV
+#export ROS_MASTER_URI="http://freightliner-ranger:11311"
 #export ROS_MASTER_URI="http://marti-zotac:11311"
+#export ROS_MASTER_URI="http://marti-1:11311"
+#export ROS_MASTER_URI="http://marti-ranger:11311"
+#export ROS_MASTER_URI="http://martixe-perception-2:11311"
+#export ROS_MASTER_URI="http://mrzr-8801:11311"
+#export ROS_MASTER_URI="http://mrzr-8803:11311"
+#export ROS_MASTER_URI="http://mrzr-8787:11311"
+#export ROS_MASTER_URI="http://mrzr-8789:11311"
+#export ROS_MASTER_URI="http://rubicon-c11:11311"
+#export ROS_MASTER_URI="http://rubicon-c12:11311"
+#export ROS_MASTER_URI="http://192.168.70.100:11311"  # Acura 1
+#export ROS_MASTER_URI="http://192.168.15.100:11311"  # Golfcart
 #ulimit -c 0 #unlimited
 
-echo "ROS Master is $ROS_MASTER_URI"
-echo "ROS Workspace is $(roscd && pwd)"
+export ROSDISTRO_INDEX_URL=https://ivs-git.dyn.datasys.swri.edu/external/rosdistro/raw/swri/index.yaml
+
+echo "ROS IP:        $ROS_IP"
+echo "ROS Hostname:  $ROS_HOSTNAME"
+echo "ROS Workspace: $(roscd && pwd)"
+echo "ROS Master:    $ROS_MASTER_URI"
