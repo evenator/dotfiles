@@ -4,6 +4,10 @@ if [[ $PATH != *"$HOME/scripts"* ]]; then
 fi
 export PYTHONPATH="$PYTHONPATH:~/.python/lib/python2.7/site-packages:$HOME/ivs_conf/python"
 
+#export ROSDISTRO_INDEX_URL=https://ivs-git.dyn.datasys.swri.edu/external/rosdistro/raw/swri/index.yaml
+
+ulimit -c unlimited
+
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -94,6 +98,9 @@ export ROSCONSOLE_CONFIG_FILE=/home/evenator/.ros/config/rosconsole.config
 #export ROS_MASTER_URI="http://rubicon-c11:11311"
 #export ROS_MASTER_URI="http://mrzr-8789:11311"
 export ROS_MASTER_URI="http://localhost:11311"
+#export ROS_MASTER_URI="http://evenator-thinkpad.dyn.datasys.swri.edu:11311"
+#export ROS_MASTER_URI="http://rubicon-c12:11311"
+#export ROS_MASTER_URI="http://ranger-bone.dyn.datasys.swri.edu:11311"
 
 export ROS_IP=$(ip addr show ppp0 2>/dev/null | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 if [ -z "$ROS_IP" ]; then
