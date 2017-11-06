@@ -41,7 +41,7 @@ open(){
 if [ $# -lt 1 ]; then
   gnome-open . 1>/dev/null 2>/dev/null
 else
-  for FILE in $@; do
+  for FILE in "$@"; do
     gnome-open "$FILE" 1>/dev/null 2>/dev/null
   done
 fi
@@ -269,7 +269,7 @@ alias rm='try_git_rm'
 
 vpn(){
   echo -ne "\033]0;VPN\007"
-  snx
+  snx  || return
   echo "VPN connected"
   echo "Press Ctrl+C to disconnect"
   ssh -N -D 1080 boomer 2>/dev/null

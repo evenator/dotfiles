@@ -81,7 +81,7 @@ export PATH="$HOME/scripts:$HOME/.cabal/bin:$PATH"
 # DistCC Color GCC and ccache
 #export PATH=/usr/lib/colorgcc/bin:$PATH  # Disabled because g++ is going to gcc for some reason
 #export CGCC_FORCE_COLOR=yes  # Should force color output, even to pipe
-export CCACHE_PREFIX="distcc"
+#export CCACHE_PREFIX="distcc"
 
 if [[ $PATH != *"/usr/lib/distcc"* ]]; then
     export PATH="/usr/lib/ccache:/usr/lib/distcc:$PATH"
@@ -119,8 +119,9 @@ export ROSLAUNCH_SSH_UNKNOWN=1
 
 export ROS_MASTER_URI="http://localhost:11311"
 #export ROS_MASTER_URI="http://$ROS_IP:11311"
-#export ROS_MASTER_URI="http://192.168.10.100:11311"  # Marti 1
-#export ROS_MASTER_URI="http://192.168.20.100:11311"  # DSAT HMMWV
+#export ROS_MASTER_URI="http://192.168.10.110:11311"  # Marti 1
+#export ROS_MASTER_URI="http://192.168.20.100:11311"  # DSAT HMMWV, MKZ
+#export ROS_MASTER_URI="http://192.168.20.104:11311"  # MKZ Kinetic
 #export ROS_MASTER_URI="http://swri-1165:11311"  # SWRI 1165
 #export ROS_MASTER_URI="http://am1:11312"  # AMAS MTV
 #export ROS_MASTER_URI="http://dsat-hmmwv:11311"
@@ -137,9 +138,14 @@ export ROS_MASTER_URI="http://localhost:11311"
 #export ROS_MASTER_URI="http://rubicon-c12:11311"
 #export ROS_MASTER_URI="http://192.168.70.100:11311"  # Acura 1
 #export ROS_MASTER_URI="http://192.168.15.100:11311"  # Golfcart
+#export ROS_MASTER_URI="http://intellibot.local:11311"  # Intellibot
+#export ROS_MASTER_URI="http://hmmwv-s11:11311"
+export ROS_MASTER_URI="http://hmmwv-s12:11311"
 #ulimit -c 0 #unlimited
 
 export ROSDISTRO_INDEX_URL=https://ivs-git.dyn.datasys.swri.edu/external/rosdistro/raw/swri/index.yaml
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64/"
 
 echo "ROS IP:        $ROS_IP"
 echo "ROS Hostname:  $ROS_HOSTNAME"
