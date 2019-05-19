@@ -76,7 +76,4 @@ EDITOR=vim
 GIT_EDITOR=$EDITOR
 
 # ROS Stuff
-export ROSCONSOLE_CONFIG_FILE=$HOME/.ros/config/rosconsole.config
-export ROS_IP=$(ip addr show eth0 | grep -e "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" -o | head -n1)
 export ROS_HOSTNAME=`hostname`
-export ROSLAUNCH_SSH_UNKNOWN=1
